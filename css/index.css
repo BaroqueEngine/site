@@ -28,8 +28,8 @@ li {
 }
 .canvas-container {
   position: relative;
-  width: 100%;
-  height: 500px;
+  width: 100vw;
+  height: 80vh;
   overflow: hidden;
 }
 .canvas {
@@ -40,7 +40,7 @@ li {
 .logo {
   position: absolute;
   left: 0;
-  top: 180px;
+  top: 280px;
   width: 100%;
   padding-left: 40px;
   padding-right: 40px;
@@ -49,6 +49,36 @@ li {
 .container {
   max-width: 600px;
   margin: 60px auto 100px;
+}
+.link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 20vh;
+}
+.link-container a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  text-align: center;
+  font-size: 24px;
+  transition: all 0.5s;
+}
+.link-container a:hover {
+  background-color: #222;
+}
+.link-container a:nth-of-type(1):after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 2px;
+  height: 30%;
+  background-color: #444;
 }
 .item {
   margin-top: 50px;
