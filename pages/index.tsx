@@ -6,8 +6,6 @@ import IndexWork from "./IndexWork";
 import BooksAndArticles from "./BooksAndArticles";
 import Profile from "./Profile";
 import Contact from "./Contact";
-import Head from "next/head";
-
 export default function Home() {
   return (
     <>
