@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { shortTagNames, tagColors, tagNames } from "../src/Utils";
 import { css } from "@emotion/css";
+import Link from "next/link";
 
 export default function WorkTag({ tag }: { tag: string }) {
   const [hover, setHover] = useState(false);
@@ -10,7 +11,7 @@ export default function WorkTag({ tag }: { tag: string }) {
   const shortTagName = shortTagNames[tag];
 
   return (
-    <a
+    <Link
       key={tag}
       className={workTag}
       style={{ borderColor: tagColor, backgroundColor: tagColor + opacity }}
@@ -27,7 +28,7 @@ export default function WorkTag({ tag }: { tag: string }) {
         <span className={normalTag}>{tagName}</span>
         <span className={shortTag}>{shortTagName}</span>
       </span>
-    </a>
+    </Link>
   );
 }
 

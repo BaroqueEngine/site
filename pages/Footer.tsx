@@ -72,9 +72,9 @@ export default function Footer() {
             <div className={footerTitle}>SITE INFO</div>
             <ul>
               <li>GitHub Pages</li>
+              <li>Next.js</li>
               <li>TypeScript</li>
               <li>React</li>
-              <li>Vite</li>
               <li>@emotion</li>
               <li>After Effects</li>
             </ul>
