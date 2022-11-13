@@ -7,7 +7,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/404.html",
+        source: "/works/62/",
         destination: "/",
         permanent: true,
       },
