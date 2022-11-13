@@ -38,7 +38,7 @@ export default function Footer() {
                 <a href="/tags/rust">Rust</a>
               </li>
               <li>
-                <a href="/tags/pixi">Pixi JS</a>
+                <a href="/tags/pixi">PixiJS</a>
               </li>
               <li>
                 <a href="/tags/ae">AfterEffects</a>
