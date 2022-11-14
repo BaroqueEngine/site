@@ -40,7 +40,7 @@ export default function IndexWork() {
         ))}
       </div>
       <div className={pagerContainer}>
-        <a href="/tags/all">More...</a>
+        <Link href="/tags/all">More...</Link>
       </div>
     </>
   );
