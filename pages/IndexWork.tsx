@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import Link from "next/link";
 import WorkTag from "./WorkTag";
 import { css } from "@emotion/css";
-import Image from "next/image";
 
 export default function IndexWork() {
   const itemsPerPage = 9;
   const [items, updateItems] = useState<WorkItem[]>([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     (async () => {
       const response = await fetch("/data/work.json");
       const json = await response.json();
