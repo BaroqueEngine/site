@@ -6,7 +6,32 @@ import IndexWork from "./IndexWork";
 import BooksAndArticles from "./BooksAndArticles";
 import Profile from "./Profile";
 import Contact from "./Contact";
-export default function Home() {
+import { GetStaticProps } from "next";
+
+export const getStaticProps: GetStaticProps = async () => {
+  const path =
+    process.env.NODE_ENV !== "production"
+      ? "http://localhost:3000"
+      : "https://baroqueengine.net/";
+  const response = await fetch(`${path}/data/work.json`);
+  const items = await response.json();
+  items.reverse();
+
+  const articlesResponse = await fetch(`${path}/data/articles.json`);
+  const articleItems = await articlesResponse.json();
+
+  return {
+    props: { items, articleItems },
+  };
+};
+
+export default function Home({
+  items,
+  articleItems,
+}: {
+  items: WorkItem[];
+  articleItems: Article[];
+}) {
   return (
     <>
       <Header />
@@ -17,10 +42,10 @@ export default function Home() {
             <div className={workTitle}>
               <span className={workTitleEn}>EXPERIMENTS</span>
             </div>
-            <IndexWork />
+            <IndexWork items={items} />
           </div>
         </section>
-        <BooksAndArticles />
+        <BooksAndArticles articleItems={articleItems} />
         <Profile />
         <Contact />
       </div>

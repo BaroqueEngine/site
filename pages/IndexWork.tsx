@@ -1,20 +1,9 @@
-import { useLayoutEffect, useState } from "react";
 import Link from "next/link";
 import WorkTag from "./WorkTag";
 import { css } from "@emotion/css";
 
-export default function IndexWork() {
+export default function IndexWork({ items }: { items: WorkItem[] }) {
   const itemsPerPage = 9;
-  const [items, updateItems] = useState<WorkItem[]>([]);
-
-  useLayoutEffect(() => {
-    (async () => {
-      const response = await fetch("/data/work.json");
-      const json = await response.json();
-      json.reverse();
-      updateItems(json);
-    })();
-  }, []);
 
   function getLink(id: number) {
     return (

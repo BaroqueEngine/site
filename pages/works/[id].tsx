@@ -1,27 +1,53 @@
 import Header from "../Header";
 import { css } from "@emotion/css";
 import WorkTag from "../WorkTag";
-import { useEffect, useState } from "react";
 import Footer from "../Footer";
 import YouTube from "react-youtube";
 import { useRouter } from "next/router";
+import { GetStaticProps } from "next";
 
-export default function Works() {
+export async function getStaticPaths() {
+  const path =
+    process.env.NODE_ENV !== "production"
+      ? "http://localhost:3000"
+      : "https://baroqueengine.net/";
+  const response = await fetch(`${path}/data/work.json`);
+  const items: WorkItem[] = await response.json();
+  const paths = [];
+  for (const item of items) {
+    paths.push({ params: { id: item.id.toString() } });
+  }
+
+  return {
+    paths: paths,
+    fallback: false,
+  };
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const path =
+    process.env.NODE_ENV !== "production"
+      ? "http://localhost:3000"
+      : "https://baroqueengine.net/";
+  const response = await fetch(`${path}/data/work.json`);
+  const items = await response.json();
+  items.reverse();
+
+  return {
+    props: { items },
+  };
+};
+
+export default function Works({ items }: { items: WorkItem[] }) {
   const router = useRouter();
   const id = Number(router.query.id);
-  const [data, updateData] = useState<WorkItem>();
+  let data: WorkItem = items[0];
 
-  useEffect(() => {
-    (async () => {
-      const response = await fetch("/data/work.json");
-      const items: WorkItem[] = await response.json();
-      for (const item of items) {
-        if (item.id === id) {
-          updateData(item);
-        }
-      }
-    })();
-  }, [id]);
+  for (const item of items) {
+    if (item.id === id) {
+      data = item;
+    }
+  }
 
   function getTags(item: WorkItem) {
     return item.tags.map((tag: string) => {

@@ -1,19 +1,12 @@
 import { css } from "@emotion/css";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { InView } from "react-intersection-observer";
 
-export default function BooksAndArticles() {
-  const [data, updateData] = useState<Article[]>([]);
-
-  useEffect(() => {
-    (async () => {
-      const response = await fetch("/data/articles.json");
-      const json: Article[] = await response.json();
-      updateData(json);
-    })();
-  }, []);
-
+export default function BooksAndArticles({
+  articleItems,
+}: {
+  articleItems: Article[];
+}) {
   return (
     <section className={container}>
       <div className={clip}></div>
@@ -22,7 +15,7 @@ export default function BooksAndArticles() {
           <span className={worksTitleEn}>BOOKS & ARTICLES</span>
         </div>
         <ul className={booksList}>
-          {data.map((d, i) => {
+          {articleItems.map((d, i) => {
             return (
               <InView key={i}>
                 {({ inView, ref }) => {
