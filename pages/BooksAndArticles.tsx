@@ -7,52 +7,56 @@ export default function BooksAndArticles({
 }: {
   articleItems: Article[];
 }) {
-  return (
-    <section className={container}>
-      <div className={clip}></div>
-      <div className={booksContainer}>
-        <div className={booksTitle}>
-          <span className={worksTitleEn}>BOOKS & ARTICLES</span>
+  if (articleItems) {
+    return (
+      <section className={container}>
+        <div className={clip}></div>
+        <div className={booksContainer}>
+          <div className={booksTitle}>
+            <span className={worksTitleEn}>BOOKS & ARTICLES</span>
+          </div>
+          <ul className={booksList}>
+            {articleItems.map((d, i) => {
+              return (
+                <InView key={i}>
+                  {({ inView, ref }) => {
+                    return (
+                      <li ref={ref}>
+                        <Link
+                          className={booksListLink}
+                          target="_blank"
+                          href={d.url}
+                        >
+                          <div className={linkContainer}>
+                            <div className={linkImageContainer}>
+                              <div
+                                style={{
+                                  backgroundImage: `url(${d.image_url})`,
+                                }}
+                                className={`${linkImage} ${
+                                  inView ? linkImageVisible : ""
+                                }`}
+                              ></div>
+                            </div>
+                            <div className={linkText}>
+                              <div className={title}>{d.title}</div>
+                              <div className={description}>{d.description}</div>
+                            </div>
+                          </div>
+                        </Link>
+                      </li>
+                    );
+                  }}
+                </InView>
+              );
+            })}
+          </ul>
         </div>
-        <ul className={booksList}>
-          {articleItems.map((d, i) => {
-            return (
-              <InView key={i}>
-                {({ inView, ref }) => {
-                  return (
-                    <li ref={ref}>
-                      <Link
-                        className={booksListLink}
-                        target="_blank"
-                        href={d.url}
-                      >
-                        <div className={linkContainer}>
-                          <div className={linkImageContainer}>
-                            <div
-                              style={{
-                                backgroundImage: `url(${d.image_url})`,
-                              }}
-                              className={`${linkImage} ${
-                                inView ? linkImageVisible : ""
-                              }`}
-                            ></div>
-                          </div>
-                          <div className={linkText}>
-                            <div className={title}>{d.title}</div>
-                            <div className={description}>{d.description}</div>
-                          </div>
-                        </div>
-                      </Link>
-                    </li>
-                  );
-                }}
-              </InView>
-            );
-          })}
-        </ul>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  } else {
+    return <></>;
+  }
 }
 
 const container = css`

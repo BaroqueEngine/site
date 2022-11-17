@@ -11,27 +11,31 @@ export default function IndexWork({ items }: { items: WorkItem[] }) {
     );
   }
 
-  return (
-    <>
-      <div className={workItems}>
-        {items.slice(0, itemsPerPage).map((o) => (
-          <div key={`${o.id}`} className={workItem}>
-            <Link className={workItemImageLink} href={`/works/${o.id}`}>
-              {getLink(o.id)}
-            </Link>
-            <div className={workTags}>
-              {o.tags.map((tag: string) => {
-                return <WorkTag key={tag} tag={tag} />;
-              })}
+  if (items) {
+    return (
+      <>
+        <div className={workItems}>
+          {items.slice(0, itemsPerPage).map((o) => (
+            <div key={`${o.id}`} className={workItem}>
+              <Link className={workItemImageLink} href={`/works/${o.id}`}>
+                {getLink(o.id)}
+              </Link>
+              <div className={workTags}>
+                {o.tags.map((tag: string) => {
+                  return <WorkTag key={tag} tag={tag} />;
+                })}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className={pagerContainer}>
-        <Link href="/tags/all">More...</Link>
-      </div>
-    </>
-  );
+          ))}
+        </div>
+        <div className={pagerContainer}>
+          <Link href="/tags/all">More...</Link>
+        </div>
+      </>
+    );
+  } else {
+    return <></>;
+  }
 }
 
 /*
