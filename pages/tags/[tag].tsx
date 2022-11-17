@@ -5,8 +5,49 @@ import Header from "../Header";
 import Footer from "../Footer";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { GetStaticProps } from "next";
 
-export default function Tags() {
+export async function getStaticPaths() {
+  const tags = [
+    "blender",
+    "p5js",
+    "js",
+    "wfc",
+    "td",
+    "cs",
+    "mj",
+    "rust",
+    "pixi",
+    "ae",
+    "ai",
+    "all",
+  ];
+  let paths = [];
+  for (const tag of tags) {
+    paths.push({ params: { tag: tag } });
+  }
+
+  return {
+    paths: paths,
+    fallback: false,
+  };
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const url =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/"
+      : "https://baroqueengine.net/";
+  const response = await fetch(`${url}/data/work.json`);
+  const items = await response.json();
+  items.reverse();
+
+  return {
+    props: { items },
+  };
+};
+
+export default function Tags({ items }: { items: WorkItem[] }) {
   const router = useRouter();
   const tag = String(router.query.tag);
   if (tag === undefined) {
@@ -14,18 +55,9 @@ export default function Tags() {
   }
   const tagName = tagNames[tag];
 
-  const [items, updateitems] = useState<WorkItem[]>([]);
-
-  useEffect(() => {
-    (async () => {
-      const response = await fetch("/data/work.json");
-      const json: WorkItem[] = await response.json();
-      const newJson =
-        tag === "all" ? json : json.filter((d) => d.tags.includes(tag));
-      newJson.reverse();
-      updateitems(newJson);
-    })();
-  }, [tag]);
+  const newJson =
+    tag === "all" ? items : items.filter((d) => d.tags.includes(tag));
+  newJson.reverse();
 
   function getLink(id: number) {
     return <img src={`/data/${id}/t.png`} alt="作品" />;

@@ -9,13 +9,15 @@ import Contact from "./Contact";
 import { GetStaticProps } from "next";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`https://baroqueengine.net/data/work.json`);
+  const url =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/"
+      : "https://baroqueengine.net/";
+  const response = await fetch(`${url}data/work.json`);
   const items = await response.json();
   items.reverse();
 
-  const articlesResponse = await fetch(
-    `https://baroqueengine.net/data/articles.json`
-  );
+  const articlesResponse = await fetch(`${url}data/articles.json`);
   const articleItems = await articlesResponse.json();
 
   return {

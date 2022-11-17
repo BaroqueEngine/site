@@ -7,7 +7,11 @@ import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
 
 export async function getStaticPaths() {
-  const response = await fetch(`https://baroqueengine.net/data/work.json`);
+  const url =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/"
+      : "https://baroqueengine.net/";
+  const response = await fetch(`${url}/data/work.json`);
   const items: WorkItem[] = await response.json();
   const paths = [];
   for (const item of items) {
@@ -21,7 +25,11 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`https://baroqueengine.net/data/work.json`);
+  const url =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/"
+      : "https://baroqueengine.net/";
+  const response = await fetch(`${url}/data/work.json`);
   const items = await response.json();
   items.reverse();
 
