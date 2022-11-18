@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import { domain, tagNames } from "../../others/Utils";
+import { tagNames } from "../../others/Utils";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { useRouter } from "next/router";
@@ -20,7 +20,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`${domain()}/data/work.json`);
+  const response = await fetch(`${process.env.DOMAIN}/data/work.json`);
   const items = await response.json();
   items.reverse();
 

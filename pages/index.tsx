@@ -6,14 +6,13 @@ import BooksAndArticles from "../components/BooksAndArticles";
 import Profile from "../components/Profile";
 import Contact from "../components/Contact";
 import { GetStaticProps, NextPage } from "next";
-import { domain } from "../others/Utils";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`${domain()}data/work.json`);
+  const response = await fetch(`${process.env.DOMAIN}data/work.json`);
   const items = await response.json();
   items.reverse();
 
-  const articlesResponse = await fetch(`${domain()}data/articles.json`);
+  const articlesResponse = await fetch(`${process.env.DOMAIN}data/articles.json`);
   const articleItems = await articlesResponse.json();
 
   return {

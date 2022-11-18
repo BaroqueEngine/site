@@ -1,7 +1,3 @@
-export const domain = (): string => {
-  return process.env.NODE_ENV === "development" ? "http://localhost:3000/" : "https://baroqueengine.net/";
-};
-
 export const tagNames: { [key: string]: string } = {
   td: "TouchDesigner",
   js: "JavaScript",
