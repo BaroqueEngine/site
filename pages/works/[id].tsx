@@ -5,10 +5,10 @@ import Footer from "../../components/Footer";
 import YouTube from "react-youtube";
 import { useRouter } from "next/router";
 import { GetStaticProps, NextPage } from "next";
+import { domain } from "../../others/Utils";
 
 export async function getStaticPaths() {
-  const url = process.env.NODE_ENV === "development" ? "http://localhost:3000/" : "https://baroqueengine.net/";
-  const response = await fetch(`${url}/data/work.json`);
+  const response = await fetch(`${domain()}/data/work.json`);
   const items: WorkItem[] = await response.json();
   const paths = [];
   for (const item of items) {
@@ -22,8 +22,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const url = process.env.NODE_ENV === "development" ? "http://localhost:3000/" : "https://baroqueengine.net/";
-  const response = await fetch(`${url}/data/work.json`);
+  const response = await fetch(`${domain()}/data/work.json`);
   const items = await response.json();
   items.reverse();
 
