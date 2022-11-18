@@ -1,7 +1,7 @@
-import Header from "../Header";
+import Header from "../../components/Header";
 import { css } from "@emotion/css";
-import WorkTag from "../WorkTag";
-import Footer from "../Footer";
+import WorkTag from "../../components/WorkTag";
+import Footer from "../../components/Footer";
 import YouTube from "react-youtube";
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next";

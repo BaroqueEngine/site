@@ -1,8 +1,7 @@
 import { css } from "@emotion/css";
-import { useEffect, useState } from "react";
-import { tagNames } from "../../src/Utils";
-import Header from "../Header";
-import Footer from "../Footer";
+import { tagNames } from "../../others/Utils";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { GetStaticProps } from "next";

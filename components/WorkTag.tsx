@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { shortTagNames, tagColors, tagNames } from "../src/Utils";
+import { shortTagNames, tagColors, tagNames } from "../others/Utils";
 import { css } from "@emotion/css";
 import Link from "next/link";
 

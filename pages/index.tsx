@@ -1,11 +1,11 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import IndexVideo from "./IndexVideo";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import IndexVideo from "../components/IndexVideo";
 import { css } from "@emotion/css";
-import IndexWork from "./IndexWork";
-import BooksAndArticles from "./BooksAndArticles";
-import Profile from "./Profile";
-import Contact from "./Contact";
+import IndexWork from "../components/IndexWork";
+import BooksAndArticles from "../components/BooksAndArticles";
+import Profile from "../components/Profile";
+import Contact from "../components/Contact";
 import { GetStaticProps } from "next";
 
 export const getStaticProps: GetStaticProps = async () => {
