@@ -1,6 +1,4 @@
 import { css } from "@emotion/css";
-import Image from "next/image";
-import ProfileImage from "../public/image/profile_2.png";
 
 const Profile = () => {
   return (
@@ -11,7 +9,7 @@ const Profile = () => {
           <span className={worksTitleEn}>PROFILE</span>
         </div>
         <div className={profileImage}>
-          <Image src={ProfileImage} alt="" />
+          <img src="/image/profile_2.png" />
         </div>
         <div className={profileName}>miku</div>
 

@@ -1,14 +1,12 @@
 import { css } from "@emotion/css";
-import Image from "next/image";
 import Link from "next/link";
-import ProfileImage from "../public/image/profile.jpg";
 
 const Footer = () => {
   return (
     <>
       <footer className={footer}>
         <div className={footerLeft}>
-          <Image src={ProfileImage} alt="Author - miku" />
+          <img src="/image/profile.jpg" alt="Author - miku" />
         </div>
         <div className={footerRight}>
           <div className={footerContent}>
