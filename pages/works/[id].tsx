@@ -4,13 +4,10 @@ import WorkTag from "../../components/WorkTag";
 import Footer from "../../components/Footer";
 import YouTube from "react-youtube";
 import { useRouter } from "next/router";
-import { GetStaticProps } from "next";
+import { GetStaticProps, NextPage } from "next";
 
 export async function getStaticPaths() {
-  const url =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/"
-      : "https://baroqueengine.net/";
+  const url = process.env.NODE_ENV === "development" ? "http://localhost:3000/" : "https://baroqueengine.net/";
   const response = await fetch(`${url}/data/work.json`);
   const items: WorkItem[] = await response.json();
   const paths = [];
@@ -25,10 +22,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const url =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/"
-      : "https://baroqueengine.net/";
+  const url = process.env.NODE_ENV === "development" ? "http://localhost:3000/" : "https://baroqueengine.net/";
   const response = await fetch(`${url}/data/work.json`);
   const items = await response.json();
   items.reverse();
@@ -38,7 +32,11 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default function Works({ items }: { items: WorkItem[] }) {
+type Props = {
+  items: WorkItem[];
+};
+
+const Works: NextPage<Props> = ({ items }) => {
   const router = useRouter();
   const id = Number(router.query.id);
   let data: WorkItem = items[0];
@@ -88,7 +86,9 @@ export default function Works({ items }: { items: WorkItem[] }) {
       <Footer />
     </>
   );
-}
+};
+
+export default Works;
 
 const item = css`
   display: flex;

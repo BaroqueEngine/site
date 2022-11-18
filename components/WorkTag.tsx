@@ -3,7 +3,11 @@ import { shortTagNames, tagColors, tagNames } from "../others/Utils";
 import { css } from "@emotion/css";
 import Link from "next/link";
 
-export default function WorkTag({ tag }: { tag: string }) {
+type Props = {
+  tag: string;
+};
+
+const WorkTag = ({ tag }: Props) => {
   const [hover, setHover] = useState(false);
   const opacity = hover ? "ff" : "00";
   const tagColor = tagColors[tag];
@@ -30,7 +34,9 @@ export default function WorkTag({ tag }: { tag: string }) {
       </span>
     </Link>
   );
-}
+};
+
+export default WorkTag;
 
 const normalTag = css`
   @media (max-width: 1200px) {

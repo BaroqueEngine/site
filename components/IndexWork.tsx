@@ -2,41 +2,50 @@ import Link from "next/link";
 import WorkTag from "./WorkTag";
 import { css } from "@emotion/css";
 
-export default function IndexWork({ items }: { items: WorkItem[] }) {
+type Props = {
+  items: WorkItem[];
+};
+
+const IndexWork = ({ items }: Props) => {
   const itemsPerPage = 9;
 
   function getLink(id: number) {
-    return (
-      <img src={`/data/${id}/t.png`} alt="作品" width="600" height="450" />
-    );
+    return <img src={`/data/${id}/t.png`} alt="作品" width="600" height="450" />;
   }
 
   if (items) {
     return (
-      <>
-        <div className={workItems}>
-          {items.slice(0, itemsPerPage).map((o) => (
-            <div key={`${o.id}`} className={workItem}>
-              <Link className={workItemImageLink} href={`/works/${o.id}`}>
-                {getLink(o.id)}
-              </Link>
-              <div className={workTags}>
-                {o.tags.map((tag: string) => {
-                  return <WorkTag key={tag} tag={tag} />;
-                })}
+      <section className={work}>
+        <div className={workContainer}>
+          <div className={workTitle}>
+            <span className={workTitleEn}>EXPERIMENTS</span>
+          </div>
+          <div className={workItems}>
+            {items.slice(0, itemsPerPage).map((o) => (
+              <div key={`${o.id}`} className={workItem}>
+                <Link className={workItemImageLink} href={`/works/${o.id}`}>
+                  {getLink(o.id)}
+                </Link>
+                <div className={workTags}>
+                  {o.tags.map((tag: string) => {
+                    return <WorkTag key={tag} tag={tag} />;
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className={pagerContainer}>
+            <Link href="/tags/all">More...</Link>
+          </div>
         </div>
-        <div className={pagerContainer}>
-          <Link href="/tags/all">More...</Link>
-        </div>
-      </>
+      </section>
     );
   } else {
     return <></>;
   }
-}
+};
+
+export default IndexWork;
 
 /*
 <div className={pagerContainer}>
@@ -50,6 +59,33 @@ export default function IndexWork({ items }: { items: WorkItem[] }) {
   />
 </div>
 */
+
+const work = css`
+  padding-bottom: 60px;
+`;
+
+const workContainer = css`
+  max-width: 1056px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  padding-left: 2%;
+  padding-right: 2%;
+`;
+
+const workTitle = css`
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  text-align: center;
+`;
+
+const workTitleEn = css`
+  font-family: "Tungsten";
+  font-size: min(20vw, 100px);
+  font-weight: 500;
+  color: #f7383f;
+`;
 
 const pagerContainer = css`
   display: flex;

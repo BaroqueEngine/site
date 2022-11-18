@@ -1,12 +1,12 @@
 import { css } from "@emotion/css";
 
-export default function IndexVideo() {
+const IndexVideo = () => {
   return (
     <div className={container}>
       <video src="/image/index.mp4" autoPlay={true} muted={true} loop={true} />
     </div>
   );
-}
+};
 
 const container = css`
   position: relative;
@@ -29,3 +29,5 @@ const container = css`
     display: none;
   }
 `;
+
+export default IndexVideo;

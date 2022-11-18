@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 
-export default function Contact() {
+const Contact = () => {
   return (
     <section className={container}>
       <a className={`${item} ${itemTwitter}`} href="https://twitter.com/baroqueengine">
@@ -14,7 +14,9 @@ export default function Contact() {
       </a>
     </section>
   );
-}
+};
+
+export default Contact;
 
 const container = css`
   display: flex;

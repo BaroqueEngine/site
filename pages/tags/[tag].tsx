@@ -4,23 +4,10 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
-export async function getStaticPaths() {
-  const tags = [
-    "blender",
-    "p5js",
-    "js",
-    "wfc",
-    "td",
-    "cs",
-    "mj",
-    "rust",
-    "pixi",
-    "ae",
-    "ai",
-    "all",
-  ];
+export const getStaticPaths: GetStaticPaths = async () => {
+  const tags = ["blender", "p5js", "js", "wfc", "td", "cs", "mj", "rust", "pixi", "ae", "ai", "all"];
   let paths = [];
   for (const tag of tags) {
     paths.push({ params: { tag: tag } });
@@ -30,13 +17,10 @@ export async function getStaticPaths() {
     paths: paths,
     fallback: false,
   };
-}
+};
 
 export const getStaticProps: GetStaticProps = async () => {
-  const url =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/"
-      : "https://baroqueengine.net/";
+  const url = process.env.NODE_ENV === "development" ? "http://localhost:3000/" : "https://baroqueengine.net/";
   const response = await fetch(`${url}/data/work.json`);
   const items = await response.json();
   items.reverse();
@@ -46,7 +30,11 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default function Tags({ items }: { items: WorkItem[] }) {
+type Props = {
+  items: WorkItem[];
+};
+
+const Tags: NextPage<Props> = ({ items }) => {
   const router = useRouter();
   const tag = String(router.query.tag);
   if (tag === undefined) {
@@ -54,8 +42,7 @@ export default function Tags({ items }: { items: WorkItem[] }) {
   }
   const tagName = tagNames[tag];
 
-  const newWorkItems =
-    tag === "all" ? items : items.filter((d) => d.tags.includes(tag));
+  const newWorkItems = tag === "all" ? items : items.filter((d) => d.tags.includes(tag));
 
   function getLink(id: number) {
     return <img src={`/data/${id}/t.png`} alt="作品" />;
@@ -79,7 +66,9 @@ export default function Tags({ items }: { items: WorkItem[] }) {
       <Footer />
     </>
   );
-}
+};
+
+export default Tags;
 
 const container = css`
   max-width: 1056px;

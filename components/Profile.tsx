@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 
-export default function Profile() {
+const Profile = () => {
   return (
     <section className={container}>
       <div className={clip}></div>
@@ -18,100 +18,51 @@ export default function Profile() {
           <ul className={skillList2}>
             <li className={skillListItem}>
               <div className={skillListLang}>HTML/CSS</div>
-              <svg
-                className={skillListItemSvg}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 900 40"
-              >
+              <svg className={skillListItemSvg} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 40">
                 <rect width="100%" height="100%" stroke="none" />
-                <path
-                  d="M 0 0 L 600 0 Q 605 20 600 40 Q 595 60 600 80 Q 605 100 600 120 L 0 120 Z"
-                  stroke="none"
-                />
+                <path d="M 0 0 L 600 0 Q 605 20 600 40 Q 595 60 600 80 Q 605 100 600 120 L 0 120 Z" stroke="none" />
               </svg>
             </li>
             <li className={skillListItem}>
               <div className={skillListLang}>JavaScript</div>
-              <svg
-                className={skillListItemSvg}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 900 40"
-              >
+              <svg className={skillListItemSvg} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 40">
                 <rect width="100%" height="100%" stroke="none" />
-                <path
-                  d="M 0 0 L 700 0 Q 705 20 700 40 Q 695 60 700 80 Q 705 100 700 120 L 0 120 Z"
-                  stroke="none"
-                />
+                <path d="M 0 0 L 700 0 Q 705 20 700 40 Q 695 60 700 80 Q 705 100 700 120 L 0 120 Z" stroke="none" />
               </svg>
             </li>
             <li className={skillListItem}>
               <div className={skillListLang}>TypeScript</div>
-              <svg
-                className={skillListItemSvg}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 900 40"
-              >
+              <svg className={skillListItemSvg} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 40">
                 <rect width="100%" height="100%" stroke="none" />
-                <path
-                  d="M 0 0 L 800 0 Q 805 20 800 40 Q 795 60 800 80 Q 805 100 800 120 L 0 120 Z"
-                  stroke="none"
-                />
+                <path d="M 0 0 L 800 0 Q 805 20 800 40 Q 795 60 800 80 Q 805 100 800 120 L 0 120 Z" stroke="none" />
               </svg>
             </li>
             <li className={skillListItem}>
               <div className={skillListLang}>Python</div>
-              <svg
-                className={skillListItemSvg}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 900 40"
-              >
+              <svg className={skillListItemSvg} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 40">
                 <rect width="100%" height="100%" stroke="none" />
-                <path
-                  d="M 0 0 L 600 0 Q 605 20 600 40 Q 595 60 600 80 Q 605 100 600 120 L 0 120 Z"
-                  stroke="none"
-                />
+                <path d="M 0 0 L 600 0 Q 605 20 600 40 Q 595 60 600 80 Q 605 100 600 120 L 0 120 Z" stroke="none" />
               </svg>
             </li>
             <li className={skillListItem}>
               <div className={skillListLang}>Go</div>
-              <svg
-                className={skillListItemSvg}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 900 40"
-              >
+              <svg className={skillListItemSvg} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 40">
                 <rect width="100%" height="100%" stroke="none" />
-                <path
-                  d="M 0 0 L 300 0 Q 305 20 300 40 Q 295 60 300 80 Q 305 100 300 120 L 0 120 Z"
-                  stroke="none"
-                />
+                <path d="M 0 0 L 300 0 Q 305 20 300 40 Q 295 60 300 80 Q 305 100 300 120 L 0 120 Z" stroke="none" />
               </svg>
             </li>
             <li className={skillListItem}>
               <div className={skillListLang}>PHP</div>
-              <svg
-                className={skillListItemSvg}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 900 40"
-              >
+              <svg className={skillListItemSvg} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 40">
                 <rect width="100%" height="100%" stroke="none" />
-                <path
-                  d="M 0 0 L 400 0 Q 405 20 400 40 Q 395 60 400 80 Q 405 100 400 120 L 0 120 Z"
-                  stroke="none"
-                />
+                <path d="M 0 0 L 400 0 Q 405 20 400 40 Q 395 60 400 80 Q 405 100 400 120 L 0 120 Z" stroke="none" />
               </svg>
             </li>
             <li className={skillListItem}>
               <div className={skillListLang}>C++</div>
-              <svg
-                className={skillListItemSvg}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 900 40"
-              >
+              <svg className={skillListItemSvg} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 40">
                 <rect width="100%" height="100%" stroke="none" />
-                <path
-                  d="M 0 0 L 200 0 Q 205 20 200 40 Q 195 60 200 80 Q 205 100 200 120 L 0 120 Z"
-                  stroke="none"
-                />
+                <path d="M 0 0 L 200 0 Q 205 20 200 40 Q 195 60 200 80 Q 205 100 200 120 L 0 120 Z" stroke="none" />
               </svg>
             </li>
           </ul>
@@ -138,7 +89,9 @@ export default function Profile() {
       </div>
     </section>
   );
-}
+};
+
+export default Profile;
 
 const skillListLang = css`
   padding-right: 10px;

@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Header() {
+const Header = () => {
   const [visibleDrawer, updateVisibleDrawer] = useState<boolean>(false);
   const onDrawerClick = () => {
     updateVisibleDrawer(!visibleDrawer);
@@ -32,11 +32,7 @@ export default function Header() {
           </Link>
         </h1>
         <div className={getDrawerOpenCss()}>
-          <label
-            htmlFor="drawer-check"
-            className={drawerOpenLabel}
-            onClick={onDrawerClick}
-          >
+          <label htmlFor="drawer-check" className={drawerOpenLabel} onClick={onDrawerClick}>
             <span></span>
           </label>
           <nav className={drawerContent}>
@@ -50,7 +46,9 @@ export default function Header() {
       </header>
     </>
   );
-}
+};
+
+export default Header;
 
 const drawer = css`
   display: none;

@@ -2,11 +2,11 @@ import { css } from "@emotion/css";
 import Link from "next/link";
 import { InView } from "react-intersection-observer";
 
-export default function BooksAndArticles({
-  articleItems,
-}: {
+type Props = {
   articleItems: Article[];
-}) {
+};
+
+const BooksAndArticles = ({ articleItems }: Props) => {
   if (articleItems) {
     return (
       <section className={container}>
@@ -22,20 +22,14 @@ export default function BooksAndArticles({
                   {({ inView, ref }) => {
                     return (
                       <li ref={ref}>
-                        <Link
-                          className={booksListLink}
-                          target="_blank"
-                          href={d.url}
-                        >
+                        <Link className={booksListLink} target="_blank" href={d.url}>
                           <div className={linkContainer}>
                             <div className={linkImageContainer}>
                               <div
                                 style={{
                                   backgroundImage: `url(${d.image_url})`,
                                 }}
-                                className={`${linkImage} ${
-                                  inView ? linkImageVisible : ""
-                                }`}
+                                className={`${linkImage} ${inView ? linkImageVisible : ""}`}
                               ></div>
                             </div>
                             <div className={linkText}>
@@ -57,7 +51,9 @@ export default function BooksAndArticles({
   } else {
     return <></>;
   }
-}
+};
+
+export default BooksAndArticles;
 
 const container = css`
   background-color: #31b8c0;
