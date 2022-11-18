@@ -55,9 +55,8 @@ export default function Tags({ items }: { items: WorkItem[] }) {
   }
   const tagName = tagNames[tag];
 
-  const newJson =
+  const newWorkItems =
     tag === "all" ? items : items.filter((d) => d.tags.includes(tag));
-  newJson.reverse();
 
   function getLink(id: number) {
     return <img src={`/data/${id}/t.png`} alt="作品" />;
@@ -69,7 +68,7 @@ export default function Tags({ items }: { items: WorkItem[] }) {
       <div className={container}>
         <div className={tagsCategoryTitle}>Category - {tagName}</div>
         <div className={workItems}>
-          {items.map((o: any) => (
+          {newWorkItems.map((o: any) => (
             <div key={`${o.id}`} className={workItem}>
               <Link className={workItemImageLink} href={`/works/${o.id}`}>
                 {getLink(o.id)}
