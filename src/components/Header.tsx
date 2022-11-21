@@ -31,6 +31,17 @@ const Header = () => {
             BAROQUE ENGINE
           </Link>
         </h1>
+        <div className={headerSocialLinks}>
+          <a className={twitter} href="https://twitter.com/baroqueengine" target="_blank">
+            <img src="/image/social/twitter.png" />
+          </a>
+          <a className={github} href="https://github.com/BaroqueEngine" target="_blank">
+            <img src="/image/social/github.png" />
+          </a>
+          <a className={zenn} href="https://zenn.dev/baroqueengine" target="_blank">
+            <img src="/image/social/zenn.png" />
+          </a>
+        </div>
         <div className={getDrawerOpenCss()}>
           <label htmlFor="drawer-check" className={drawerOpenLabel} onClick={onDrawerClick}>
             <span></span>
@@ -49,6 +60,51 @@ const Header = () => {
 };
 
 export default Header;
+
+const twitter = css`
+  img {
+    height: 24px;
+  }
+
+  :hover {
+    opacity: 0.75;
+  }
+`;
+
+const github = css`
+  padding-left: 15px;
+
+  img {
+    height: 24px;
+  }
+
+  :hover {
+    opacity: 0.75;
+  }
+`;
+
+const zenn = css`
+  padding-left: 15px;
+
+  img {
+    height: 24px;
+  }
+
+  :hover {
+    opacity: 0.75;
+  }
+`;
+
+const headerSocialLinks = css`
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 18px 15px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
 
 const drawer = css`
   display: none;
