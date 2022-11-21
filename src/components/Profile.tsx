@@ -182,7 +182,7 @@ const skillList = css`
 `;
 
 const profileName = css`
-  margin-top: 10px;
+  margin-top: 20px;
   font-family: "Tungsten";
   font-size: 40px;
   font-weight: 500;

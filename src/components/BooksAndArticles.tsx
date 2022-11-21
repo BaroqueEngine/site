@@ -73,7 +73,6 @@ const title = css`
   font-size: 24px;
   font-weight: 600;
   color: #ddd;
-  text-align: justify;
 `;
 
 const linkText = css`
@@ -116,6 +115,7 @@ const booksListLink = css`
   border-radius: 8px;
   background-color: #195f63;
   text-decoration: none;
+  box-shadow: 10px 10px 15px -10px black;
 `;
 
 const worksTitleEn = css`

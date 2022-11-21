@@ -152,7 +152,7 @@ const footerContent = css`
 `;
 
 const footerTitle = css`
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   color: #888;
 
   @media (max-width: 560px) {

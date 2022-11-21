@@ -90,6 +90,7 @@ const workTitleEn = css`
 const pagerContainer = css`
   display: flex;
   justify-content: center;
+  margin-top: 30px;
   font-family: "Tungsten";
   font-size: 40px;
   font-weight: 500;
