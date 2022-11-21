@@ -37,7 +37,7 @@ export const tagColors: { [key: string]: string } = {
   rust: "#4499aa",
   wfc: "#aa9944",
   ai: "#ff00ff",
-  blender: "#ffff00",
+  blender: "#878700",
   python: "#ff00ff",
   pixi: "#ff23fb",
   ae: "#552bff",

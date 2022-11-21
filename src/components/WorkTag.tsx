@@ -9,7 +9,6 @@ type Props = {
 
 const WorkTag = ({ tag }: Props) => {
   const [hover, setHover] = useState(false);
-  const opacity = hover ? "ff" : "00";
   const tagColor = tagColors[tag];
   const tagName = tagNames[tag];
   const shortTagName = shortTagNames[tag];
@@ -18,7 +17,6 @@ const WorkTag = ({ tag }: Props) => {
     <Link
       key={tag}
       className={workTag}
-      style={{ borderColor: tagColor, backgroundColor: tagColor + opacity }}
       onMouseEnter={() => {
         setHover(true);
       }}
@@ -27,8 +25,7 @@ const WorkTag = ({ tag }: Props) => {
       }}
       href={`/tags/${tag}`}
     >
-      <span className={box} style={{ backgroundColor: tagColor }}></span>
-      <span>
+      <span className={workTagContainer} style={{ backgroundColor: tagColor }}>
         <span className={normalTag}>{tagName}</span>
         <span className={shortTag}>{shortTagName}</span>
       </span>
@@ -37,6 +34,11 @@ const WorkTag = ({ tag }: Props) => {
 };
 
 export default WorkTag;
+
+const workTagContainer = css`
+  padding: 3px 10px;
+  border-radius: 5px;
+`;
 
 const normalTag = css`
   @media (max-width: 1200px) {
@@ -52,23 +54,13 @@ const shortTag = css`
   }
 `;
 
-const box = css`
-  width: 8px;
-  height: 8px;
-  margin-right: 8px;
-`;
-
 const workTag = css`
   display: flex;
   align-items: center;
-  padding: 0.4rem min(2vw, 12px);
+  padding: 1rem min(2vw, 8px);
   text-decoration: none;
   font-size: 12px;
   font-family: "Mono";
   transition: all 0.2s;
   letter-spacing: 1px;
-
-  :hover {
-    background-color: aquamarine;
-  }
 `;
