@@ -5,10 +5,10 @@ import Footer from "../../components/Footer";
 import YouTube from "react-youtube";
 import { useRouter } from "next/router";
 import { GetStaticProps, NextPage } from "next";
+import json from "../../../public/data/work.json";
 
 export async function getStaticPaths() {
-  const response = await fetch(`${process.env.DOMAIN}/data/work.json`);
-  const items: WorkItem[] = await response.json();
+  const items: WorkItem[] = json as WorkItem[];
   const paths = [];
   for (const item of items) {
     paths.push({ params: { id: item.id.toString() } });
