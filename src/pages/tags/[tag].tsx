@@ -8,7 +8,15 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import json from "../../../public/data/work.json";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const tags = ["blender", "p5js", "js", "wfc", "td", "cs", "mj", "rust", "pixi", "ae", "ai", "all"];
+  const tags: string[] = ["all"];
+  const workItems: WorkItem[] = json as WorkItem[];
+  for (const item of workItems) {
+    for (const tag of item.tags) {
+      if (!tags.includes(tag)) {
+        tags.push(tag);
+      }
+    }
+  }
   let paths = [];
   for (const tag of tags) {
     paths.push({ params: { tag: tag } });

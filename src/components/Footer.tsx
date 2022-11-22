@@ -22,6 +22,9 @@ const Footer = () => {
                 <a href="/tags/js">JavaScript</a>
               </li>
               <li>
+                <a href="/tags/webgl">WebGL</a>
+              </li>
+              <li>
                 <a href="/tags/wfc">WaveFunctionCollapse</a>
               </li>
               <li>

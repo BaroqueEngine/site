@@ -57,9 +57,9 @@ const shortTag = css`
 const workTag = css`
   display: flex;
   align-items: center;
-  padding: 1rem min(2vw, 8px);
+  padding: 1rem min(2vw, 6px);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 10px;
   font-family: "Mono";
   transition: all 0.2s;
   letter-spacing: 1px;
