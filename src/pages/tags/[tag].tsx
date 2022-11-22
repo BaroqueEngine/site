@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import json from "../../../public/data/work.json";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tags = ["blender", "p5js", "js", "wfc", "td", "cs", "mj", "rust", "pixi", "ae", "ai", "all"];
@@ -20,9 +21,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`${process.env.DOMAIN}/data/work.json`);
-  const items = await response.json();
-  items.reverse();
+  const items: WorkItem[] = json as WorkItem[];
+  items.sort((a, b) => b.id - a.id);
 
   return {
     props: { items },

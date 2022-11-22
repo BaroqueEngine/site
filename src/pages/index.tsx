@@ -6,14 +6,13 @@ import BooksAndArticles from "../components/BooksAndArticles";
 import Profile from "../components/Profile";
 import Contact from "../components/Contact";
 import { GetStaticProps, NextPage } from "next";
+import workJson from "../../public/data/work.json";
+import articlesJson from "../../public/data/articles.json";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`${process.env.DOMAIN}data/work.json`);
-  const items = await response.json();
-  items.reverse();
-
-  const articlesResponse = await fetch(`${process.env.DOMAIN}data/articles.json`);
-  const articleItems = await articlesResponse.json();
+  const items: WorkItem[] = workJson as WorkItem[];
+  items.sort((a, b) => b.id - a.id);
+  const articleItems: Article[] = articlesJson as Article[];
 
   return {
     props: { items, articleItems },

@@ -9,6 +9,7 @@ import json from "../../../public/data/work.json";
 
 export async function getStaticPaths() {
   const items: WorkItem[] = json as WorkItem[];
+  items.sort((a, b) => b.id - a.id);
   const paths = [];
   for (const item of items) {
     paths.push({ params: { id: item.id.toString() } });
@@ -21,9 +22,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`${process.env.DOMAIN}/data/work.json`);
-  const items = await response.json();
-  items.reverse();
+  const items: WorkItem[] = json as WorkItem[];
 
   return {
     props: { items },
