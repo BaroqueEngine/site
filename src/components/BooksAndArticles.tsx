@@ -134,7 +134,7 @@ const booksContainer = css`
 const booksTitle = css`
   font-family: "Tungsten";
   font-size: min(20vw, 100px);
-  font-weight: bold;
+  font-weight: 500;
 `;
 
 const booksList = css`
