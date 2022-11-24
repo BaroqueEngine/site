@@ -9,5 +9,5 @@ export default function App({ Component, pageProps }: AppProps) {
     setShow(true);
   }, []);
 
-  return <>{show ? <Component {...pageProps} /> : <></>};</>;
+  return <>{show ? <Component {...pageProps} /> : <></>}</>;
 }
