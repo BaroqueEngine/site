@@ -32,7 +32,7 @@ export const shortTagNames: { [key: string]: string } = {
 };
 export const tagColors: { [key: string]: string } = {
   td: "#0000ff",
-  js: "#ff9900",
+  js: "#E58500",
   p5js: "#ed1a3d",
   cs: "#ed1a3d",
   mj: "#009ad6",
