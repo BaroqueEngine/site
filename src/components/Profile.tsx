@@ -13,7 +13,7 @@ const Profile = () => {
         </div>
         <div className={profileName}>miku</div>
 
-        <div className={skillTitle}>SKILL (LANGUAGE)</div>
+        <div className={skillTitle}>My Skills - Languages</div>
         <div className={skillDetail}>
           <ul className={skillList2}>
             <li className={skillListItem}>
@@ -68,7 +68,7 @@ const Profile = () => {
           </ul>
         </div>
 
-        <div className={skillTitle}>SKILL (Library)</div>
+        <div className={skillTitle}>My Skills - Libraries</div>
         <div className={skillDetail}>
           <ul className={skillList}>
             <li>React</li>

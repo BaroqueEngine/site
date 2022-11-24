@@ -63,4 +63,8 @@ const workTag = css`
   font-family: "Mono";
   transition: all 0.2s;
   letter-spacing: 1px;
+
+  :hover {
+    opacity: 0.8;
+  }
 `;
