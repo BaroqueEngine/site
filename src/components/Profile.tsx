@@ -2,7 +2,7 @@ import { css } from "@emotion/css";
 
 const Profile = () => {
   return (
-    <section className={container}>
+    <section className={container} id="profile">
       <div className={clip}></div>
       <div className={workContainer}>
         <div className={profileTitle}>
@@ -142,6 +142,7 @@ const container = css`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 60px;
+  scroll-margin-top: -110px;
 `;
 
 const worksTitleEn = css`

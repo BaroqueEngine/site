@@ -8,6 +8,7 @@ import Contact from "../components/Contact";
 import { GetStaticProps, NextPage } from "next";
 import workJson from "../../public/data/work.json";
 import articlesJson from "../../public/data/articles.json";
+import NavLinks from "../components/NavLinks";
 
 export const getStaticProps: GetStaticProps = async () => {
   const items: WorkItem[] = workJson as WorkItem[];
@@ -28,6 +29,7 @@ const Home: NextPage<Props> = ({ items, articleItems }) => {
   return (
     <>
       <Header />
+      <NavLinks />
       <IndexVideo />
       <div>
         <IndexWork items={items} />

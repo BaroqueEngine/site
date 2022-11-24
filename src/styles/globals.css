@@ -18,6 +18,9 @@
   background: #f7383f;
   border-radius: 5px;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #161616;
   color: #f0f0f0;

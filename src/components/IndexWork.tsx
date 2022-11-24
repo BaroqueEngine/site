@@ -11,7 +11,7 @@ const IndexWork = ({ items }: Props) => {
 
   if (items) {
     return (
-      <section className={work}>
+      <section className={work} id="experiments">
         <div className={workContainer}>
           <div className={workTitle}>
             <span className={workTitleEn}>EXPERIMENTS</span>
@@ -58,6 +58,7 @@ export default IndexWork;
 
 const work = css`
   padding-bottom: 60px;
+  scroll-margin-top: 80px;
 `;
 
 const workContainer = css`

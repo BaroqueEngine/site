@@ -9,7 +9,7 @@ type Props = {
 const BooksAndArticles = ({ articleItems }: Props) => {
   if (articleItems) {
     return (
-      <section className={container}>
+      <section className={container} id="articles">
         <div className={clip}></div>
         <div className={booksContainer}>
           <div className={booksTitle}>
@@ -58,6 +58,7 @@ export default BooksAndArticles;
 const container = css`
   background-color: #31b8c0;
   padding-bottom: min(10vw, 140px);
+  scroll-margin-top: -110px;
 `;
 
 const clip = css`
