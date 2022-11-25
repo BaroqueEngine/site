@@ -30,9 +30,10 @@ const IndexWork = ({ items }: Props) => {
               </div>
             ))}
           </div>
-          <div className={pagerContainer}>
-            <Link href="/tags/all">More...</Link>
-          </div>
+          <Link href="/tags/all" className={moreContainer}>
+            <span>MORE</span>
+            <span className={moreIcon}>&gt;</span>
+          </Link>
         </div>
       </section>
     );
@@ -43,18 +44,47 @@ const IndexWork = ({ items }: Props) => {
 
 export default IndexWork;
 
-/*
-<div className={pagerContainer}>
-  <ReactPaginate
-    breakLabel="..."
-    nextLabel="next"
-    onPageChange={onPageChange}
-    pageRangeDisplayed={5}
-    pageCount={Math.ceil(items.length / itemsPerPage)}
-    previousLabel="prev"
-  />
-</div>
-*/
+const moreContainer = css`
+  display: block;
+  width: 200px;
+  height: 60px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #000;
+  text-align: center;
+  line-height: 60px;
+  position: relative;
+  font-family: "Tungsten";
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+
+  span {
+    display: inline-block;
+    transition: all 0.25s;
+  }
+
+  :hover {
+    border: 1px solid #aaa;
+  }
+
+  :hover span:first-child {
+    transform: translate(-10px, 0);
+  }
+
+  :hover span:last-child {
+    opacity: 1;
+  }
+`;
+
+const moreIcon = css`
+  display: inline-block;
+  position: absolute;
+  left: 120px;
+  opacity: 0;
+`;
 
 const work = css`
   padding-bottom: 60px;
@@ -82,24 +112,6 @@ const workTitleEn = css`
   font-size: min(20vw, 100px);
   font-weight: 500;
   color: #f7383f;
-`;
-
-const pagerContainer = css`
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  font-family: "Tungsten";
-  font-size: 40px;
-  font-weight: 500;
-
-  a:hover {
-    color: red;
-    cursor: pointer;
-  }
-
-  .selected a {
-    color: orange;
-  }
 `;
 
 const workItems = css`
