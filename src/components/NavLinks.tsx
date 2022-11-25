@@ -56,7 +56,7 @@ export default NavLinks;
 
 const navItems = css`
   position: fixed;
-  left: 15px;
+  left: 5px;
   top: 100px;
   z-index: 10;
 
@@ -68,7 +68,7 @@ const navItems = css`
     padding: 0;
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1300px) {
     display: none;
   }
 `;
@@ -95,6 +95,17 @@ const navLink = css`
     width: 100px;
     height: 1px;
     background: #fff;
+  }
+
+  :after {
+    position: absolute;
+    left: calc(-10px - 3px);
+    top: calc(50% - 3px);
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 9999px;
   }
 `;
 
