@@ -1,4 +1,6 @@
 import { css, cx } from "@emotion/css";
+import ImageLink from "atoms/ImageLink";
+import ImageLinks from "molecules/ImageLinks";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
@@ -32,15 +34,11 @@ const Header = () => {
           </Link>
         </h1>
         <div className={headerSocialLinks}>
-          <a className={twitter} href="https://twitter.com/baroqueengine" target="_blank">
-            <img src="/image/social/twitter.png" />
-          </a>
-          <a className={github} href="https://github.com/BaroqueEngine" target="_blank">
-            <img src="/image/social/github.png" />
-          </a>
-          <a className={zenn} href="https://zenn.dev/baroqueengine" target="_blank">
-            <img src="/image/social/zenn.png" />
-          </a>
+          <ImageLinks padding={15}>
+            <ImageLink url="https://twitter.com/baroqueengine" src="/image/social/twitter.png" />
+            <ImageLink url="https://github.com/BaroqueEngine" src="/image/social/github.png" />
+            <ImageLink url="https://zenn.dev/baroqueengine" src="/image/social/zenn.png" />
+          </ImageLinks>
         </div>
         <div className={getDrawerOpenCss()}>
           <label htmlFor="drawer-check" className={drawerOpenLabel} onClick={onDrawerClick}>
@@ -60,40 +58,6 @@ const Header = () => {
 };
 
 export default Header;
-
-const twitter = css`
-  img {
-    height: 24px;
-  }
-
-  :hover {
-    opacity: 0.75;
-  }
-`;
-
-const github = css`
-  padding-left: 15px;
-
-  img {
-    height: 24px;
-  }
-
-  :hover {
-    opacity: 0.75;
-  }
-`;
-
-const zenn = css`
-  padding-left: 15px;
-
-  img {
-    height: 24px;
-  }
-
-  :hover {
-    opacity: 0.75;
-  }
-`;
 
 const headerSocialLinks = css`
   position: fixed;
