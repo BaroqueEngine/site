@@ -3,9 +3,12 @@ import { tagNames } from "../../others/Utils";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import json from "../../../public/data/work.json";
+import LinkImage from "atoms/LinkImage";
+import GapContainer from "molecules/GapContainer";
+import ItemTag from "organisms/ItemTag";
+import VGapContainer from "molecules/VGapContainer";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tags: string[] = ["all"];
@@ -47,13 +50,9 @@ const Tags: NextPage<Props> = ({ items }) => {
   if (tag === undefined) {
     return <></>;
   }
+
   const tagName = tagNames[tag];
-
   const newWorkItems = tag === "all" ? items : items.filter((d) => d.tags.includes(tag));
-
-  function getLink(id: number) {
-    return <img src={`/data/${id}/t.png`} alt="作品" />;
-  }
 
   return (
     <>
@@ -63,9 +62,14 @@ const Tags: NextPage<Props> = ({ items }) => {
         <div className={workItems}>
           {newWorkItems.map((o: any) => (
             <div key={`${o.id}`} className={workItem}>
-              <Link className={workItemImageLink} href={`/works/${o.id}`}>
-                {getLink(o.id)}
-              </Link>
+              <VGapContainer gap={10}>
+                <LinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} />
+                <GapContainer gap={10}>
+                  {o.tags.map((tag: string) => {
+                    return <ItemTag key={tag} tag={tag} />;
+                  })}
+                </GapContainer>
+              </VGapContainer>
             </div>
           ))}
         </div>
@@ -103,11 +107,4 @@ const workItem = css`
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 45px;
-`;
-
-const workItemImageLink = css`
-  transition: all 0.2s;
-  :hover {
-    opacity: 0.75;
-  }
 `;
