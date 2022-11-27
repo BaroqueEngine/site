@@ -1,9 +1,9 @@
-import Link from "next/link";
 import { css } from "@emotion/css";
 import ItemTag from "organisms/ItemTag";
 import GapContainer from "molecules/GapContainer";
 import LinkImage from "atoms/LinkImage";
 import VGapContainer from "molecules/VGapContainer";
+import MoreButton from "organisms/MoreButton";
 
 type Props = {
   items: WorkItem[];
@@ -33,10 +33,7 @@ const IndexWork = ({ items }: Props) => {
               </div>
             ))}
           </div>
-          <Link href="/tags/all" className={moreContainer}>
-            <span>MORE</span>
-            <span className={moreIcon}>&gt;</span>
-          </Link>
+          <MoreButton />
         </div>
       </section>
     );
@@ -46,48 +43,6 @@ const IndexWork = ({ items }: Props) => {
 };
 
 export default IndexWork;
-
-const moreContainer = css`
-  display: block;
-  width: 200px;
-  height: 60px;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  background: #000;
-  text-align: center;
-  line-height: 60px;
-  position: relative;
-  font-family: "Tungsten";
-  font-weight: 500;
-  font-size: 24px;
-  letter-spacing: 0.1rem;
-  text-decoration: none;
-
-  span {
-    display: inline-block;
-    transition: all 0.25s;
-  }
-
-  :hover {
-    border: 1px solid #aaa;
-  }
-
-  :hover span:first-child {
-    transform: translate(-10px, 0);
-  }
-
-  :hover span:last-child {
-    opacity: 1;
-  }
-`;
-
-const moreIcon = css`
-  display: inline-block;
-  position: absolute;
-  left: 120px;
-  opacity: 0;
-`;
 
 const work = css`
   padding-bottom: 60px;
