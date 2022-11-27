@@ -1,6 +1,5 @@
 import { css } from "@emotion/css";
-import Link from "next/link";
-import { InView } from "react-intersection-observer";
+import ArticleItem from "organisms/ArticleItem";
 
 type Props = {
   articleItems: Article[];
@@ -16,33 +15,8 @@ const BooksAndArticles = ({ articleItems }: Props) => {
             <span className={worksTitleEn}>BOOKS & ARTICLES</span>
           </div>
           <ul className={booksList}>
-            {articleItems.map((d, i) => {
-              return (
-                <InView key={i}>
-                  {({ inView, ref }) => {
-                    return (
-                      <li ref={ref}>
-                        <Link className={booksListLink} target="_blank" href={d.url}>
-                          <div className={linkContainer}>
-                            <div className={linkImageContainer}>
-                              <div
-                                style={{
-                                  backgroundImage: `url(${d.image_url})`,
-                                }}
-                                className={`${linkImage} ${inView ? linkImageVisible : ""}`}
-                              ></div>
-                            </div>
-                            <div className={linkText}>
-                              <div className={title}>{d.title}</div>
-                              <div className={description}>{d.description}</div>
-                            </div>
-                          </div>
-                        </Link>
-                      </li>
-                    );
-                  }}
-                </InView>
-              );
+            {articleItems.map((article, i) => {
+              return <ArticleItem key={i.toString()} article={article} />;
             })}
           </ul>
         </div>
@@ -67,56 +41,6 @@ const clip = css`
   background-color: #161616;
   clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 0%);
   transform: translate(0, -1px);
-`;
-
-const title = css`
-  margin-bottom: 15px;
-  font-size: 24px;
-  font-weight: 600;
-  color: #ddd;
-`;
-
-const linkText = css`
-  padding: 15px;
-`;
-
-const description = css`
-  font-size: 14px;
-  color: #aaa;
-  text-align: justify;
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
-
-const linkContainer = css``;
-
-const linkImageContainer = css`
-  display: flex;
-  justify-content: center;
-`;
-
-const linkImage = css`
-  width: 100%;
-  height: 150px;
-  opacity: 0.5;
-  border-radius: 10px;
-  background-size: cover;
-  transition: all 0.75s;
-`;
-
-const linkImageVisible = css`
-  opacity: 1;
-`;
-
-const booksListLink = css`
-  display: block;
-  height: 100%;
-  border-radius: 8px;
-  background-color: #195f63;
-  text-decoration: none;
-  box-shadow: 10px 10px 15px -10px black;
 `;
 
 const worksTitleEn = css`
