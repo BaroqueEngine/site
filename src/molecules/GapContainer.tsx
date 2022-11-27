@@ -2,18 +2,18 @@ import { css } from "@emotion/css";
 
 type Props = {
   children: React.ReactNode;
-  padding: number;
+  gap: number;
 };
 
-const ImageLinks = ({ children, padding }: Props) => {
+const GapContainer = ({ children, gap }: Props) => {
   return (
-    <div style={{ gap: padding }} className={container}>
+    <div style={{ gap }} className={container}>
       {children}
     </div>
   );
 };
 
-export default ImageLinks;
+export default GapContainer;
 
 const container = css`
   display: flex;
