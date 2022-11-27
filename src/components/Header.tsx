@@ -35,9 +35,9 @@ const Header = () => {
         </h1>
         <div className={headerSocialLinks}>
           <GapContainer gap={15}>
-            <LinkImage href="https://twitter.com/baroqueengine" src="/image/social/twitter.png" alt="Twitter" />
-            <LinkImage href="https://github.com/BaroqueEngine" src="/image/social/github.png" alt="GitHub" />
-            <LinkImage href="https://zenn.dev/baroqueengine" src="/image/social/zenn.png" alt="Zenn" />
+            <LinkImage href="https://twitter.com/baroqueengine" src="/image/social/twitter.png" alt="Twitter" isBlank={true} />
+            <LinkImage href="https://github.com/BaroqueEngine" src="/image/social/github.png" alt="GitHub" isBlank={true} />
+            <LinkImage href="https://zenn.dev/baroqueengine" src="/image/social/zenn.png" alt="Zenn" isBlank={true} />
           </GapContainer>
         </div>
         <div className={getDrawerOpenCss()}>

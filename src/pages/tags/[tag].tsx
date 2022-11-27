@@ -63,7 +63,7 @@ const Tags: NextPage<Props> = ({ items }) => {
           {newWorkItems.map((o: any) => (
             <div key={`${o.id}`} className={workItem}>
               <VGapContainer gap={10}>
-                <LinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} />
+                <LinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} isBlank={false} />
                 <GapContainer gap={10}>
                   {o.tags.map((tag: string) => {
                     return <ItemTag key={tag} tag={tag} />;

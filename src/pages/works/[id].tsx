@@ -1,12 +1,12 @@
 import Header from "../../components/Header";
 import { css } from "@emotion/css";
 import Footer from "../../components/Footer";
-import YouTube from "react-youtube";
 import { useRouter } from "next/router";
 import { GetStaticProps, NextPage } from "next";
 import json from "../../../public/data/work.json";
 import ItemTag from "organisms/ItemTag";
 import GapContainer from "molecules/GapContainer";
+import { useEffect, useState } from "react";
 
 export async function getStaticPaths() {
   const items: WorkItem[] = json as WorkItem[];
@@ -38,6 +38,11 @@ const Works: NextPage<Props> = ({ items }) => {
   const router = useRouter();
   const id = Number(router.query.id);
   let data: WorkItem = items[0];
+  const [loadedDOM, setLoadedDOM] = useState(false);
+
+  useEffect(() => {
+    setLoadedDOM(true);
+  }, []);
 
   for (const item of items) {
     if (item.id === id) {
@@ -52,15 +57,15 @@ const Works: NextPage<Props> = ({ items }) => {
   }
 
   function getLink(item: WorkItem) {
-    const { id, type, url } = item;
+    const { id, type, videoId } = item;
     if (type === "video") {
-      return <iframe width="560" height="315" src={`https://www.youtube.com/embed/${url}?autoplay=1&mute=1&loop=1&playlist=${url}`}></iframe>;
+      return <iframe width="560" height="315" src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&origin=https://baroqueengine.net/`}></iframe>;
     } else {
       return <img src={`/data/${id}/0.png`} alt="作品" />;
     }
   }
 
-  if (data === undefined) {
+  if (data === undefined || !loadedDOM) {
     return <></>;
   }
 
@@ -69,6 +74,7 @@ const Works: NextPage<Props> = ({ items }) => {
       <Header />
       <div className={item}>
         <div className={workItem}>{getLink(data)}</div>
+        <div>{process.env.DOMAIN}</div>
         <div className={workTags}>
           <GapContainer gap={15}>{getTags(data)}</GapContainer>
         </div>

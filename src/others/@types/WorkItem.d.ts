@@ -2,7 +2,7 @@ type WorkItem = {
   id: number;
   tags: string[];
   type: "image" | "video";
-  url?: string;
+  videoId?: string;
 };
 
 type Article = {
