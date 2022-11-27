@@ -7,6 +7,7 @@ import json from "../../../public/data/work.json";
 import ItemTag from "organisms/ItemTag";
 import GapContainer from "molecules/GapContainer";
 import { useEffect, useState } from "react";
+import YouTube from "react-youtube";
 
 export async function getStaticPaths() {
   const items: WorkItem[] = json as WorkItem[];
@@ -59,7 +60,18 @@ const Works: NextPage<Props> = ({ items }) => {
   function getLink(item: WorkItem) {
     const { id, type, videoId } = item;
     if (type === "video") {
-      return <iframe width="560" height="315" src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&origin=https://baroqueengine.net/`}></iframe>;
+      const videoOptions = {
+        playerVars: {
+          autoplay: 1,
+          controls: 1,
+          rel: 0,
+          showinfo: 0,
+          mute: 1,
+          loop: 1,
+          playlist: videoId,
+        },
+      };
+      return <YouTube videoId={videoId} opts={videoOptions} />;
     } else {
       return <img src={`/data/${id}/0.png`} alt="作品" />;
     }
