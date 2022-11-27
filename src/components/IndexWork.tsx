@@ -1,6 +1,9 @@
 import Link from "next/link";
-import WorkTag from "./WorkTag";
 import { css } from "@emotion/css";
+import ItemTag from "organisms/ItemTag";
+import GapContainer from "molecules/GapContainer";
+import LinkImage from "atoms/LinkImage";
+import VGapContainer from "molecules/VGapContainer";
 
 type Props = {
   items: WorkItem[];
@@ -19,14 +22,14 @@ const IndexWork = ({ items }: Props) => {
           <div className={workItems}>
             {items.slice(0, itemsPerPage).map((o) => (
               <div key={`${o.id}`} className={workItem}>
-                <Link className={workItemImageLink} href={`/works/${o.id}`}>
-                  <img src={`/data/${o.id}/t.png`} alt="作品" width="600" height="450" />
-                </Link>
-                <div className={workTags}>
-                  {o.tags.map((tag: string) => {
-                    return <WorkTag key={tag} tag={tag} />;
-                  })}
-                </div>
+                <VGapContainer gap={10}>
+                  <LinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} width={600} height={450} />
+                  <GapContainer gap={10}>
+                    {o.tags.map((tag: string) => {
+                      return <ItemTag key={tag} tag={tag} />;
+                    })}
+                  </GapContainer>
+                </VGapContainer>
               </div>
             ))}
           </div>
@@ -127,21 +130,4 @@ const workItem = css`
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 45px;
-  border-radius: 8px;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  grid-template-columns: 100%;
-`;
-
-const workItemImageLink = css`
-  transition: all 0.2s;
-  :hover {
-    opacity: 0.75;
-  }
-
-  box-shadow: 10px 10px 15px -10px #444;
-`;
-
-const workTags = css`
-  display: flex;
 `;

@@ -1,14 +1,17 @@
 import { css } from "@emotion/css";
 
 type Props = {
-  url: string;
+  href: string;
   src: string;
+  alt: string;
+  width?: number;
+  height?: number;
 };
 
-const LinkImage = ({ url, src }: Props) => {
+const LinkImage = ({ href, src, alt, width, height }: Props) => {
   return (
-    <a className={link} href={url} target="_blank">
-      <img src={src} />
+    <a className={link} href={href} target="_blank">
+      <img src={src} alt={alt} width={width} height={height} />
     </a>
   );
 };

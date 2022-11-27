@@ -1,11 +1,12 @@
 import Header from "../../components/Header";
 import { css } from "@emotion/css";
-import WorkTag from "../../components/WorkTag";
 import Footer from "../../components/Footer";
 import YouTube from "react-youtube";
 import { useRouter } from "next/router";
 import { GetStaticProps, NextPage } from "next";
 import json from "../../../public/data/work.json";
+import ItemTag from "organisms/ItemTag";
+import GapContainer from "molecules/GapContainer";
 
 export async function getStaticPaths() {
   const items: WorkItem[] = json as WorkItem[];
@@ -46,7 +47,7 @@ const Works: NextPage<Props> = ({ items }) => {
 
   function getTags(item: WorkItem) {
     return item.tags.map((tag: string) => {
-      return <WorkTag key={tag} tag={tag} />;
+      return <ItemTag key={tag} tag={tag} />;
     });
   }
 
@@ -78,7 +79,9 @@ const Works: NextPage<Props> = ({ items }) => {
       <Header />
       <div className={item}>
         <div className={workItem}>{getLink(data)}</div>
-        <div className={workTags}>{getTags(data)}</div>
+        <div className={workTags}>
+          <GapContainer gap={15}>{getTags(data)}</GapContainer>
+        </div>
       </div>
       <Footer />
     </>

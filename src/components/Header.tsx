@@ -1,6 +1,6 @@
 import { css, cx } from "@emotion/css";
-import ImageLink from "atoms/ImageLink";
-import ImageLinks from "molecules/ImageLinks";
+import LinkImage from "atoms/LinkImage";
+import GapContainer from "molecules/GapContainer";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
@@ -34,11 +34,11 @@ const Header = () => {
           </Link>
         </h1>
         <div className={headerSocialLinks}>
-          <ImageLinks padding={15}>
-            <ImageLink url="https://twitter.com/baroqueengine" src="/image/social/twitter.png" />
-            <ImageLink url="https://github.com/BaroqueEngine" src="/image/social/github.png" />
-            <ImageLink url="https://zenn.dev/baroqueengine" src="/image/social/zenn.png" />
-          </ImageLinks>
+          <GapContainer gap={15}>
+            <LinkImage href="https://twitter.com/baroqueengine" src="/image/social/twitter.png" alt="Twitter" />
+            <LinkImage href="https://github.com/BaroqueEngine" src="/image/social/github.png" alt="GitHub" />
+            <LinkImage href="https://zenn.dev/baroqueengine" src="/image/social/zenn.png" alt="Zenn" />
+          </GapContainer>
         </div>
         <div className={getDrawerOpenCss()}>
           <label htmlFor="drawer-check" className={drawerOpenLabel} onClick={onDrawerClick}>
