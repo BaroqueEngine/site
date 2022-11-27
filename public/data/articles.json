@@ -34,5 +34,11 @@
     "description": "この記事では、画像をカラーモデルのCMYKに分離してハーフトーンを生成する、カラーハーフトーンの作り方について解説する。",
     "url": "https://zenn.dev/baroqueengine/articles/1fa7c9d5e906d3",
     "image_url": "/image/articles/5.png"
+  },
+  {
+    "title": "競プロ / コーディングテスト用のPythonコード",
+    "description": "",
+    "url": "https://baroqueengine.notion.site/Python-704460de552c410caf94b02066c2ee98",
+    "image_url": "/image/articles/6.png"
   }
 ]
