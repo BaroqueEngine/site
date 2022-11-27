@@ -5,7 +5,7 @@ type Props = {
   src: string;
 };
 
-const ImageLink = ({ url, src }: Props) => {
+const LinkImage = ({ url, src }: Props) => {
   return (
     <a className={link} href={url} target="_blank">
       <img src={src} />
@@ -13,7 +13,7 @@ const ImageLink = ({ url, src }: Props) => {
   );
 };
 
-export default ImageLink;
+export default LinkImage;
 
 const link = css`
   transition: opacity 0.25s;
