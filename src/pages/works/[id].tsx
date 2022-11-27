@@ -54,17 +54,7 @@ const Works: NextPage<Props> = ({ items }) => {
   function getLink(item: WorkItem) {
     const { id, type, url } = item;
     if (type === "video") {
-      const videoOptions = {
-        playerVars: {
-          autoplay: 1,
-          controls: 1,
-          rel: 0,
-          showinfo: 0,
-          mute: 1,
-          loop: 1,
-        },
-      };
-      return <YouTube videoId={url} opts={videoOptions} />;
+      return <iframe width="560" height="315" src={`https://www.youtube.com/embed/${url}?autoplay=1&mute=1&loop=1&playlist=${url}`}></iframe>;
     } else {
       return <img src={`/data/${id}/0.png`} alt="作品" />;
     }
