@@ -4,7 +4,6 @@ import IndexVideo from "../components/IndexVideo";
 import IndexWork from "../components/IndexWork";
 import BooksAndArticles from "../components/BooksAndArticles";
 import Profile from "../components/Profile";
-import Contact from "../components/Contact";
 import { GetStaticProps, NextPage } from "next";
 import workJson from "../../public/data/work.json";
 import articlesJson from "../../public/data/articles.json";
@@ -35,7 +34,6 @@ const Home: NextPage<Props> = ({ items, articleItems }) => {
         <IndexWork items={items} />
         <BooksAndArticles articleItems={articleItems} />
         <Profile />
-        <Contact />
       </div>
       <Footer />
     </>

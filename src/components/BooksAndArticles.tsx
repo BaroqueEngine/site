@@ -16,7 +16,7 @@ const BooksAndArticles = ({ articleItems }: Props) => {
           </div>
           <ul className={booksList}>
             {articleItems.map((article, i) => {
-              return <ArticleItem key={i.toString()} article={article} />;
+              return <ArticleItem key={i} article={article} />;
             })}
           </ul>
         </div>

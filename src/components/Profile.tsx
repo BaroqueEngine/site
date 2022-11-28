@@ -1,4 +1,6 @@
 import { css } from "@emotion/css";
+import GapContainer from "molecules/GapContainer";
+import ContactLink from "organisms/ContactLink";
 
 const Profile = () => {
   return (
@@ -12,6 +14,14 @@ const Profile = () => {
           <img src="/image/profile_2.png" />
         </div>
         <div className={profileName}>miku</div>
+
+        <div className={social}>
+          <GapContainer gap={30}>
+            <ContactLink width={80} href="https://twitter.com/baroqueengine" src="/image/social/twitter_big.png" alt="Twitter" isBlank={true} />
+            <ContactLink width={60} href="https://github.com/BaroqueEngine" src="/image/social/github_big.png" alt="GitHub" isBlank={true} />
+            <ContactLink width={70} href="https://zenn.dev/baroqueengine" src="/image/social/zenn.png" alt="Zenn" isBlank={true} />
+          </GapContainer>
+        </div>
 
         <div className={skillTitle}>My Skills - Languages</div>
         <div className={skillDetail}>
@@ -93,6 +103,13 @@ const Profile = () => {
 
 export default Profile;
 
+const social = css`
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 100px;
+`;
+
 const skillListLang = css`
   padding-right: 10px;
   min-width: min(20vw, 180px);
@@ -141,7 +158,7 @@ const skillDetail = css`
 const container = css`
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 60px;
+  margin-bottom: 120px;
   scroll-margin-top: -110px;
 `;
 

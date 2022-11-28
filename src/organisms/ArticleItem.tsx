@@ -2,13 +2,12 @@ import { css } from "@emotion/css";
 import Link from "next/link";
 
 type Props = {
-  key: string;
   article: Article;
 };
 
-const ArticleItem = ({ key, article }: Props) => {
+const ArticleItem = ({ article }: Props) => {
   return (
-    <li key={key}>
+    <li>
       <Link className={container} target="_blank" href={article.url}>
         <div>
           <div className={imageContainer}>
