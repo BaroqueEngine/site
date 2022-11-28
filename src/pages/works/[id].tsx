@@ -68,6 +68,7 @@ const Works: NextPage<Props> = ({ items }) => {
           showinfo: 0,
           mute: 1,
           loop: 1,
+          origin: process.env.DOMAIN,
           playlist: videoId,
         },
       };
@@ -86,7 +87,6 @@ const Works: NextPage<Props> = ({ items }) => {
       <Header />
       <div className={item}>
         <div className={workItem}>{getLink(data)}</div>
-        <div>{process.env.DOMAIN}</div>
         <div className={workTags}>
           <GapContainer gap={15}>{getTags(data)}</GapContainer>
         </div>
