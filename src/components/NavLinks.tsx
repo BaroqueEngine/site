@@ -24,7 +24,6 @@ const NavLinks = () => {
     document.querySelectorAll("section").forEach((section) => {
       sections.push(section);
     });
-    sections.pop();
     setSections(sections);
 
     return () => {
