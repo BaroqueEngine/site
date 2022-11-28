@@ -6,8 +6,8 @@ import { GetStaticProps, NextPage } from "next";
 import json from "../../../public/data/work.json";
 import ItemTag from "organisms/ItemTag";
 import GapContainer from "molecules/GapContainer";
-import { useEffect, useState } from "react";
 import YouTube from "react-youtube";
+import Head from "next/head";
 
 export async function getStaticPaths() {
   const items: WorkItem[] = json as WorkItem[];
@@ -39,11 +39,6 @@ const Works: NextPage<Props> = ({ items }) => {
   const router = useRouter();
   const id = Number(router.query.id);
   let data: WorkItem = items[0];
-  const [loadedDOM, setLoadedDOM] = useState(false);
-
-  useEffect(() => {
-    setLoadedDOM(true);
-  }, []);
 
   for (const item of items) {
     if (item.id === id) {
@@ -78,12 +73,15 @@ const Works: NextPage<Props> = ({ items }) => {
     }
   }
 
-  if (data === undefined || !loadedDOM) {
+  if (data === undefined) {
     return <></>;
   }
 
   return (
     <>
+      <Head>
+        <script src="https://www.youtube.com/iframe_api"></script>
+      </Head>
       <Header />
       <div className={item}>
         <div className={workItem}>{getLink(data)}</div>
