@@ -9,6 +9,8 @@ import LinkImage from "atoms/LinkImage";
 import GapContainer from "molecules/GapContainer";
 import ItemTag from "organisms/ItemTag";
 import VGapContainer from "molecules/VGapContainer";
+import { ItemTagList } from "organisms/ItemTagList";
+import { useState } from "react";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tags: string[] = ["all"];
@@ -51,14 +53,27 @@ const Tags: NextPage<Props> = ({ items }) => {
     return <></>;
   }
 
+  const [selectTags, setSelectTags] = useState<string[]>([]);
+
   const tagName = tagNames[tag];
-  const newWorkItems = tag === "all" ? items : items.filter((d) => d.tags.includes(tag));
+  let newWorkItems: WorkItem[] = [];
+  if (tag === "all") {
+    newWorkItems = [...items];
+    if (selectTags.length > 0) {
+      newWorkItems = newWorkItems.filter((item) => {
+        return item.tags.some((tag) => selectTags.includes(tag));
+      });
+    }
+  } else {
+    newWorkItems = items.filter((d) => d.tags.includes(tag));
+  }
 
   return (
     <>
       <Header />
       <div className={container}>
         <div className={tagsCategoryTitle}>Category - {tagName}</div>
+        {tag === "all" ? <ItemTagList selectTags={selectTags} setSelectTags={setSelectTags} /> : <></>}
         <div className={workItems}>
           {newWorkItems.map((o: any) => (
             <div key={`${o.id}`} className={workItem}>
@@ -100,7 +115,12 @@ const tagsCategoryTitle = css`
 
 const workItems = css`
   display: grid;
+  margin-bottom: 80px;
   grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: 740px) {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
 `;
 
 const workItem = css`
