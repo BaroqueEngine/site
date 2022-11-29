@@ -13,40 +13,40 @@ const Footer = () => {
             <div className={footerTitle}>CATEGORY</div>
             <ul>
               <li>
-                <a href="/tags/blender">Blender</a>
+                <Link href="/tags/blender">Blender</Link>
               </li>
               <li>
-                <a href="/tags/p5js">p5.js</a>
+                <Link href="/tags/p5js">p5.js</Link>
               </li>
               <li>
-                <a href="/tags/js">JavaScript</a>
+                <Link href="/tags/js">JavaScript</Link>
               </li>
               <li>
-                <a href="/tags/webgl">WebGL</a>
+                <Link href="/tags/webgl">WebGL</Link>
               </li>
               <li>
-                <a href="/tags/wfc">WaveFunctionCollapse</a>
+                <Link href="/tags/wfc">WaveFunctionCollapse</Link>
               </li>
               <li>
-                <a href="/tags/td">TouchDesigner</a>
+                <Link href="/tags/td">TouchDesigner</Link>
               </li>
               <li>
-                <a href="/tags/cs">C#</a>
+                <Link href="/tags/cs">C#</Link>
               </li>
               <li>
-                <a href="/tags/mj">MarkovJunior</a>
+                <Link href="/tags/mj">MarkovJunior</Link>
               </li>
               <li>
-                <a href="/tags/rust">Rust</a>
+                <Link href="/tags/rust">Rust</Link>
               </li>
               <li>
-                <a href="/tags/pixi">PixiJS</a>
+                <Link href="/tags/pixi">PixiJS</Link>
               </li>
               <li>
-                <a href="/tags/ae">AfterEffects</a>
+                <Link href="/tags/ae">AfterEffects</Link>
               </li>
               <li>
-                <a href="/tags/ai">AI</a>
+                <Link href="/tags/ai">AI</Link>
               </li>
             </ul>
           </div>
@@ -95,7 +95,7 @@ const footer = css`
   border-top: 1px solid #444;
   border-bottom: 5px solid #f7383f;
 
-  @media (max-width: 700px) {
+  @medilink (max-width: 700px) {
     flex-direction: column;
     height: auto;
   }
@@ -108,7 +108,7 @@ const footerLeft = css`
   width: 33vw;
   border-right: 1px solid #444;
 
-  @media (max-width: 700px) {
+  @medilink (max-width: 700px) {
     order: 1;
     width: 100%;
     border-right: 0;
@@ -135,11 +135,11 @@ const footerRight = css`
     margin-bottom: 0.6rem;
   }
 
-  @media (max-width: 700px) {
+  @medilink (max-width: 700px) {
     order: 0;
   }
 
-  @media (max-width: 560px) {
+  @medilink (max-width: 560px) {
     display: block;
     margin-top: 30px;
   }
@@ -148,7 +148,7 @@ const footerRight = css`
 const footerContent = css`
   padding: 25px;
 
-  @media (max-width: 560px) {
+  @medilink (max-width: 560px) {
     display: flex;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -159,7 +159,7 @@ const footerTitle = css`
   margin-bottom: 80px;
   color: #888;
 
-  @media (max-width: 560px) {
+  @medilink (max-width: 560px) {
     min-width: 100px;
     margin-bottom: 0;
   }

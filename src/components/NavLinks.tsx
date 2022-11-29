@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const NavLinks = () => {
@@ -41,9 +42,9 @@ const NavLinks = () => {
 
         return (
           <li key={i} className={navItem}>
-            <a className={className} href={`#${links[i]}`}>
+            <Link className={className} href={`#${links[i]}`}>
               {name}
-            </a>
+            </Link>
           </li>
         );
       })}

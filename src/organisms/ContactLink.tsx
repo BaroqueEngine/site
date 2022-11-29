@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import Link from "next/link";
 
 type Props = {
   href: string;
@@ -11,9 +12,9 @@ type Props = {
 
 const ContactLink = ({ href, src, alt, isBlank, width, height }: Props) => {
   return (
-    <a className={link} href={href} target={isBlank ? "_blank" : ""}>
+    <Link className={link} href={href} target={isBlank ? "_blank" : ""} rel={isBlank ? "noreferrer noopener" : ""}>
       <img src={src} alt={alt} width={width} height={height} />
-    </a>
+    </Link>
   );
 };
 

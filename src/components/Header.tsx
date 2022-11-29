@@ -3,6 +3,7 @@ import LinkImage from "atoms/LinkImage";
 import GapContainer from "molecules/GapContainer";
 import Head from "next/head";
 import Link from "next/link";
+import Script from "next/script";
 import { useState } from "react";
 
 const Header = () => {
@@ -24,10 +25,11 @@ const Header = () => {
     <>
       <Head>
         <meta charSet="UTF-8" />
+        <meta lang="ja" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>BAROQUE ENGINE</title>
-        <script src="https://www.youtube.com/iframe_api"></script>
       </Head>
+      <Script src="https://www.youtube.com/iframe_api" />
       <header className={headerContainer}>
         <h1 className={headerSiteTitle}>
           <Link className={headerSiteTitleLink} href="/">

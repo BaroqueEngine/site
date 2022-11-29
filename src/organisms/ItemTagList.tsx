@@ -27,7 +27,7 @@ export const ItemTagList = ({ selectTags, setSelectTags }: Props) => {
           return <></>;
         }
         return (
-          <div>
+          <div key={tag}>
             <input type="checkbox" id={tag} value={tag} onChange={onChangeHandler} />
             <label htmlFor={tag}>{tagNames[tag]}</label>
           </div>

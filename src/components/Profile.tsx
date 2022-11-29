@@ -11,7 +11,7 @@ const Profile = () => {
           <span className={worksTitleEn}>PROFILE</span>
         </div>
         <div className={profileImage}>
-          <img src="/image/profile_2.png" />
+          <img src="/image/profile_2.png" alt="" />
         </div>
         <div className={profileName}>miku</div>
 

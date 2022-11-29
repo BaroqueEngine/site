@@ -7,7 +7,6 @@ import json from "../../../public/data/work.json";
 import ItemTag from "organisms/ItemTag";
 import GapContainer from "molecules/GapContainer";
 import YouTube from "react-youtube";
-import Head from "next/head";
 
 export async function getStaticPaths() {
   const items: WorkItem[] = json as WorkItem[];

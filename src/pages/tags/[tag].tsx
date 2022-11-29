@@ -47,13 +47,12 @@ type Props = {
 };
 
 const Tags: NextPage<Props> = ({ items }) => {
+  const [selectTags, setSelectTags] = useState<string[]>([]);
   const router = useRouter();
   const tag = String(router.query.tag);
   if (tag === undefined) {
     return <></>;
   }
-
-  const [selectTags, setSelectTags] = useState<string[]>([]);
 
   const tagName = tagNames[tag];
   let newWorkItems: WorkItem[] = [];
