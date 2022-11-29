@@ -65,6 +65,7 @@ const Works: NextPage<Props> = ({ items }) => {
           loop: 1,
           origin: process.env.DOMAIN,
           playlist: videoId,
+          host: "https://www.youtube.com",
         },
       };
       return <YouTube videoId={videoId} opts={videoOptions} />;
