@@ -63,7 +63,7 @@ const Works: NextPage<Props> = ({ items }) => {
           showinfo: 0,
           mute: 1,
           loop: 1,
-          origin: process.env.DOMAIN,
+          origin: "https://www.youtube.com",
           playlist: videoId,
           host: "https://www.youtube.com",
         },
