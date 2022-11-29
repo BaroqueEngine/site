@@ -26,6 +26,7 @@ const Header = () => {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>BAROQUE ENGINE</title>
+        <script src="https://www.youtube.com/iframe_api"></script>
       </Head>
       <header className={headerContainer}>
         <h1 className={headerSiteTitle}>

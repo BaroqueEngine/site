@@ -63,7 +63,7 @@ const Works: NextPage<Props> = ({ items }) => {
           showinfo: 0,
           mute: 1,
           loop: 1,
-          origin: "https://www.youtube.com",
+          origin: process.env.DOMAIN,
           playlist: videoId,
           host: "https://www.youtube.com",
         },
@@ -80,9 +80,6 @@ const Works: NextPage<Props> = ({ items }) => {
 
   return (
     <>
-      <Head>
-        <script src="https://www.youtube.com/iframe_api"></script>
-      </Head>
       <Header />
       <div className={item}>
         <div className={workItem}>{getLink(data)}</div>
