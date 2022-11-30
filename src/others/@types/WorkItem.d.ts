@@ -3,6 +3,7 @@ type WorkItem = {
   tags: string[];
   type: "image" | "video";
   videoId?: string;
+  priority: number;
 };
 
 type Article = {

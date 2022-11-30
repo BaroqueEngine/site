@@ -2,350 +2,413 @@
   {
     "id": 1,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 100
   },
   {
     "id": 2,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 200
   },
   {
     "id": 3,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 300
   },
   {
     "id": 4,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 400
   },
   {
     "id": 5,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 500
   },
   {
     "id": 6,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 600
   },
   {
     "id": 7,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 700
   },
   {
     "id": 8,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 800
   },
   {
     "id": 9,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 900
   },
   {
     "id": 10,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 1000
   },
   {
     "id": 11,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 1100
   },
   {
     "id": 12,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 1200
   },
   {
     "id": 13,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 1300
   },
   {
     "id": 14,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 1400
   },
   {
     "id": 15,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 1500
   },
   {
     "id": 16,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 1600
   },
   {
     "id": 17,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 1700
   },
   {
     "id": 18,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 1800
   },
   {
     "id": 19,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 1900
   },
   {
     "id": 20,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 2000
   },
   {
     "id": 21,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 2100
   },
   {
     "id": 22,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 2200
   },
   {
     "id": 23,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 2300
   },
   {
     "id": 24,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 2400
   },
   {
     "id": 25,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 2500
   },
   {
     "id": 26,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 2600
   },
   {
     "id": 27,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 2700
   },
   {
     "id": 28,
     "tags": ["js", "p5js"],
-    "type": "image"
+    "type": "image",
+    "priority": 2800
   },
   {
     "id": 29,
     "tags": ["js", "p5js"],
     "type": "video",
-    "videoId": "bFF4_5N1Pw8"
+    "videoId": "bFF4_5N1Pw8",
+    "priority": 2900
   },
   {
     "id": 30,
     "tags": ["td"],
     "type": "video",
-    "videoId": "DiY4tN5XVi4"
+    "videoId": "DiY4tN5XVi4",
+    "priority": 3000
   },
   {
     "id": 31,
     "tags": ["td"],
     "type": "video",
-    "videoId": "WgOLqHYrFIw"
+    "videoId": "WgOLqHYrFIw",
+    "priority": 3100
   },
   {
     "id": 32,
     "tags": ["js", "p5js"],
     "type": "video",
-    "videoId": "X9BS8-zdtbE"
+    "videoId": "X9BS8-zdtbE",
+    "priority": 3200
   },
   {
     "id": 33,
     "tags": ["cs", "mj"],
     "type": "video",
-    "videoId": "P-TocSUSiHI"
+    "videoId": "P-TocSUSiHI",
+    "priority": 3300
   },
   {
     "id": 34,
     "tags": ["js", "p5js", "rust"],
     "type": "video",
-    "videoId": "U0_M8f38gGI"
+    "videoId": "U0_M8f38gGI",
+    "priority": 3400
   },
   {
     "id": 35,
     "tags": ["cs", "mj"],
     "type": "video",
-    "videoId": "3yYNEConi50"
+    "videoId": "3yYNEConi50",
+    "priority": 3500
   },
   {
     "id": 36,
     "tags": ["js", "wfc"],
     "type": "video",
-    "videoId": "t5wy3fvN2R4"
+    "videoId": "t5wy3fvN2R4",
+    "priority": 3600
   },
   {
     "id": 37,
     "tags": ["js", "wfc"],
     "type": "video",
-    "videoId": "C47W_dssSf8"
+    "videoId": "C47W_dssSf8",
+    "priority": 3700
   },
   {
     "id": 38,
     "tags": ["ai"],
-    "type": "image"
+    "type": "image",
+    "priority": 3800
   },
   {
     "id": 39,
     "tags": ["p5js", "js"],
     "type": "video",
-    "videoId": "pBvFdh-Mq78"
+    "videoId": "pBvFdh-Mq78",
+    "priority": 3900
   },
   {
     "id": 40,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "MhBhu3kFOrY"
+    "videoId": "MhBhu3kFOrY",
+    "priority": 4000
   },
   {
     "id": 41,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "zCqSQv0rVYo"
+    "videoId": "zCqSQv0rVYo",
+    "priority": 4100
   },
   {
     "id": 42,
     "tags": ["blender", "python"],
     "type": "video",
-    "videoId": "rOrJhV-58ik"
+    "videoId": "rOrJhV-58ik",
+    "priority": 4200
   },
   {
     "id": 43,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "3-HNTpmxghc"
+    "videoId": "3-HNTpmxghc",
+    "priority": 4300
   },
   {
     "id": 44,
     "tags": ["p5js", "js"],
     "type": "video",
-    "videoId": "QlfzRtA7JEM"
+    "videoId": "QlfzRtA7JEM",
+    "priority": 4400
   },
   {
     "id": 45,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "BOtPdN6PXck"
+    "videoId": "BOtPdN6PXck",
+    "priority": 4500
   },
   {
     "id": 46,
     "tags": ["p5js", "js"],
     "type": "video",
-    "videoId": "5N1MxLbfHtI"
+    "videoId": "5N1MxLbfHtI",
+    "priority": 4600
   },
   {
     "id": 47,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "JqUHlqeyFlE"
+    "videoId": "JqUHlqeyFlE",
+    "priority": 4700
   },
   {
     "id": 48,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "vOkpxTtS8LM"
+    "videoId": "vOkpxTtS8LM",
+    "priority": 4800
   },
   {
     "id": 49,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "ucnpg62dRKY"
+    "videoId": "ucnpg62dRKY",
+    "priority": 4900
   },
   {
     "id": 50,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "5XRFd1Qti4Q"
+    "videoId": "5XRFd1Qti4Q",
+    "priority": 5000
   },
   {
     "id": 51,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "qIWlKqzwCUI"
+    "videoId": "qIWlKqzwCUI",
+    "priority": 5100
   },
   {
     "id": 52,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "bvyNCym1xsI"
+    "videoId": "bvyNCym1xsI",
+    "priority": 5200
   },
   {
     "id": 53,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "SVWRZSYEpT4"
+    "videoId": "SVWRZSYEpT4",
+    "priority": 5300
   },
   {
     "id": 54,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "vd2njUmM7vY"
+    "videoId": "vd2njUmM7vY",
+    "priority": 5400
   },
   {
     "id": 55,
     "tags": ["js", "pixi"],
     "type": "video",
-    "videoId": "1miwDSNN8Qs"
+    "videoId": "1miwDSNN8Qs",
+    "priority": 5500
   },
   {
     "id": 56,
     "tags": ["blender"],
     "type": "video",
-    "videoId": "URmW86LlKRI"
+    "videoId": "URmW86LlKRI",
+    "priority": 5600
   },
   {
     "id": 57,
     "tags": ["ae"],
     "type": "video",
-    "videoId": "Q2BViXPc0oI"
+    "videoId": "Q2BViXPc0oI",
+    "priority": 5700
   },
   {
     "id": 58,
     "tags": ["p5js", "js"],
     "type": "video",
-    "videoId": "xY-0iZk-7qQ"
+    "videoId": "xY-0iZk-7qQ",
+    "priority": 5800
   },
   {
     "id": 59,
     "tags": ["p5js", "js"],
     "type": "video",
-    "videoId": "X9DTeYmv2v4"
+    "videoId": "X9DTeYmv2v4",
+    "priority": 5900
   },
   {
     "id": 60,
     "tags": ["p5js", "js"],
     "type": "video",
-    "videoId": "-6zFmGBzK_g"
+    "videoId": "-6zFmGBzK_g",
+    "priority": 6000
   },
   {
     "id": 61,
     "tags": ["p5js", "js", "webgl"],
     "type": "video",
-    "videoId": "abCRHbi3gek"
+    "videoId": "abCRHbi3gek",
+    "priority": 6100
   },
   {
     "id": 62,
     "tags": ["p5js", "js", "webgl"],
     "type": "video",
-    "videoId": "h_ZethrLhQk"
+    "videoId": "h_ZethrLhQk",
+    "priority": 6200
   },
   {
     "id": 63,
     "tags": ["p5js", "js"],
     "type": "video",
-    "videoId": "TROZUyvq4RI"
+    "videoId": "TROZUyvq4RI",
+    "priority": 6300
   }
 ]

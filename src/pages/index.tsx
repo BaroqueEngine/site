@@ -11,7 +11,7 @@ import NavLinks from "../components/NavLinks";
 
 export const getStaticProps: GetStaticProps = async () => {
   const items: WorkItem[] = workJson as WorkItem[];
-  items.sort((a, b) => b.id - a.id);
+  items.sort((a, b) => b.priority - a.priority);
   const articleItems: Article[] = articlesJson as Article[];
 
   return {
