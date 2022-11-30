@@ -410,5 +410,12 @@
     "type": "video",
     "videoId": "TROZUyvq4RI",
     "priority": 6300
+  },
+  {
+    "id": 64,
+    "tags": ["three", "js"],
+    "type": "video",
+    "videoId": "yG-zdXytKck",
+    "priority": 2850
   }
 ]
