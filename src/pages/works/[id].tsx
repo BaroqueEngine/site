@@ -10,7 +10,7 @@ import YouTube from "react-youtube";
 
 export async function getStaticPaths() {
   const items: WorkItem[] = json as WorkItem[];
-  items.sort((a, b) => b.id - a.id);
+  items.sort((a, b) => b.priority - a.priority);
   const paths = [];
   for (const item of items) {
     paths.push({ params: { id: item.id.toString() } });

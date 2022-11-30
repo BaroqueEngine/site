@@ -35,7 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const items: WorkItem[] = json as WorkItem[];
-  items.sort((a, b) => b.id - a.id);
+  items.sort((a, b) => b.priority - a.priority);
 
   return {
     props: { items },
