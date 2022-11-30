@@ -12,6 +12,7 @@ export const tagNames: { [key: string]: string } = {
   pixi: "PixiJS",
   ae: "AfterEffects",
   webgl: "WebGL",
+  three: "Three.js",
   all: "All",
 };
 export const shortTagNames: { [key: string]: string } = {
@@ -28,6 +29,7 @@ export const shortTagNames: { [key: string]: string } = {
   pixi: "PixiJS",
   ae: "AE",
   webgl: "WebGL",
+  three: "Three",
   all: "All",
 };
 export const tagColors: { [key: string]: string } = {
@@ -43,5 +45,6 @@ export const tagColors: { [key: string]: string } = {
   python: "#ff00ff",
   pixi: "#ff23fb",
   webgl: "#4E9F9A",
+  three: "#FF9984",
   ae: "#552bff",
 };
