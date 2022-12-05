@@ -56,7 +56,7 @@ const Works: NextPage<Props> = ({ items }) => {
     if (type === "video") {
       const videoOptions = {
         playerVars: {
-          autoplay: 1,
+          autoplay: 0,
           controls: 1,
           rel: 0,
           showinfo: 0,
