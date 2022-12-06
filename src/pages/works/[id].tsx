@@ -70,7 +70,7 @@ const Works: NextPage<Props> = ({ items }) => {
       return (
         <>
           <YouTube videoId={videoId} opts={videoOptions} />
-          <div className={videoAnnounce}>&#x1f4e2; Please, reload page if you can't watch the video.</div>
+          <div className={videoAnnounce}>&#x1f4e2; Please, reload page if you can&apos;t watch the video.</div>
         </>
       );
     } else {
@@ -91,8 +91,8 @@ const Works: NextPage<Props> = ({ items }) => {
           <GapContainer gap={15}>{getTags(data)}</GapContainer>
         </div>
         <div className={workComment}>
-          {data.comment.split("<br>").map((c) => (
-            <div>{c}</div>
+          {data.comment.split("<br>").map((c, i) => (
+            <div key={i}>{c}</div>
           ))}
         </div>
       </div>
