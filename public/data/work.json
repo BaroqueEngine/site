@@ -3,440 +3,507 @@
     "id": 1,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 100
+    "priority": 100,
+    "comment": ""
   },
   {
     "id": 2,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 200
+    "priority": 200,
+    "comment": ""
   },
   {
     "id": 3,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 300
+    "priority": 300,
+    "comment": ""
   },
   {
     "id": 4,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 400
+    "priority": 400,
+    "comment": ""
   },
   {
     "id": 5,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 500
+    "priority": 500,
+    "comment": ""
   },
   {
     "id": 6,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 600
+    "priority": 600,
+    "comment": ""
   },
   {
     "id": 7,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 700
+    "priority": 700,
+    "comment": ""
   },
   {
     "id": 8,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 800
+    "priority": 800,
+    "comment": ""
   },
   {
     "id": 9,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 900
+    "priority": 900,
+    "comment": ""
   },
   {
     "id": 10,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 1000
+    "priority": 1000,
+    "comment": ""
   },
   {
     "id": 11,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 1100
+    "priority": 1100,
+    "comment": ""
   },
   {
     "id": 12,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 1200
+    "priority": 1200,
+    "comment": ""
   },
   {
     "id": 13,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 1300
+    "priority": 1300,
+    "comment": ""
   },
   {
     "id": 14,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 1400
+    "priority": 1400,
+    "comment": ""
   },
   {
     "id": 15,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 1500
+    "priority": 1500,
+    "comment": ""
   },
   {
     "id": 16,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 1600
+    "priority": 1600,
+    "comment": ""
   },
   {
     "id": 17,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 1700
+    "priority": 1700,
+    "comment": ""
   },
   {
     "id": 18,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 1800
+    "priority": 1800,
+    "comment": ""
   },
   {
     "id": 19,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 1900
+    "priority": 1900,
+    "comment": ""
   },
   {
     "id": 20,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 2000
+    "priority": 2000,
+    "comment": ""
   },
   {
     "id": 21,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 2100
+    "priority": 2100,
+    "comment": ""
   },
   {
     "id": 22,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 2200
+    "priority": 2200,
+    "comment": ""
   },
   {
     "id": 23,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 2300
+    "priority": 2300,
+    "comment": ""
   },
   {
     "id": 24,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 2400
+    "priority": 2400,
+    "comment": ""
   },
   {
     "id": 25,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 2500
+    "priority": 2500,
+    "comment": ""
   },
   {
     "id": 26,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 2600
+    "priority": 2600,
+    "comment": ""
   },
   {
     "id": 27,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 2700
+    "priority": 2700,
+    "comment": ""
   },
   {
     "id": 28,
     "tags": ["js", "p5js"],
     "type": "image",
-    "priority": 2800
+    "priority": 2800,
+    "comment": ""
   },
   {
     "id": 29,
     "tags": ["js", "p5js"],
     "type": "video",
     "videoId": "bFF4_5N1Pw8",
-    "priority": 2900
+    "priority": 2900,
+    "comment": ""
   },
   {
     "id": 30,
     "tags": ["td"],
     "type": "video",
     "videoId": "DiY4tN5XVi4",
-    "priority": 3000
+    "priority": 3000,
+    "comment": ""
   },
   {
     "id": 31,
     "tags": ["td"],
     "type": "video",
     "videoId": "WgOLqHYrFIw",
-    "priority": 3100
+    "priority": 3100,
+    "comment": ""
   },
   {
     "id": 32,
     "tags": ["js", "p5js"],
     "type": "video",
     "videoId": "X9BS8-zdtbE",
-    "priority": 3200
+    "priority": 3200,
+    "comment": ""
   },
   {
     "id": 33,
     "tags": ["cs", "mj"],
     "type": "video",
     "videoId": "P-TocSUSiHI",
-    "priority": 3300
+    "priority": 3300,
+    "comment": ""
   },
   {
     "id": 34,
     "tags": ["js", "p5js", "rust"],
     "type": "video",
     "videoId": "U0_M8f38gGI",
-    "priority": 3400
+    "priority": 3400,
+    "comment": ""
   },
   {
     "id": 35,
     "tags": ["cs", "mj"],
     "type": "video",
     "videoId": "3yYNEConi50",
-    "priority": 3500
+    "priority": 3500,
+    "comment": ""
   },
   {
     "id": 36,
     "tags": ["js", "wfc"],
     "type": "video",
     "videoId": "t5wy3fvN2R4",
-    "priority": 3600
+    "priority": 3600,
+    "comment": ""
   },
   {
     "id": 37,
     "tags": ["js", "wfc"],
     "type": "video",
     "videoId": "C47W_dssSf8",
-    "priority": 3700
+    "priority": 3700,
+    "comment": ""
   },
   {
     "id": 38,
     "tags": ["ai"],
     "type": "image",
-    "priority": 3800
+    "priority": 3800,
+    "comment": ""
   },
   {
     "id": 39,
     "tags": ["p5js", "js"],
     "type": "video",
     "videoId": "pBvFdh-Mq78",
-    "priority": 3900
+    "priority": 3900,
+    "comment": ""
   },
   {
     "id": 40,
     "tags": ["blender"],
     "type": "video",
     "videoId": "MhBhu3kFOrY",
-    "priority": 4000
+    "priority": 4000,
+    "comment": ""
   },
   {
     "id": 41,
     "tags": ["blender"],
     "type": "video",
     "videoId": "zCqSQv0rVYo",
-    "priority": 4100
+    "priority": 4100,
+    "comment": ""
   },
   {
     "id": 42,
     "tags": ["blender", "python"],
     "type": "video",
     "videoId": "rOrJhV-58ik",
-    "priority": 4200
+    "priority": 4200,
+    "comment": ""
   },
   {
     "id": 43,
     "tags": ["blender"],
     "type": "video",
     "videoId": "3-HNTpmxghc",
-    "priority": 4300
+    "priority": 4300,
+    "comment": ""
   },
   {
     "id": 44,
     "tags": ["p5js", "js"],
     "type": "video",
     "videoId": "QlfzRtA7JEM",
-    "priority": 4400
+    "priority": 4400,
+    "comment": ""
   },
   {
     "id": 45,
     "tags": ["blender"],
     "type": "video",
     "videoId": "BOtPdN6PXck",
-    "priority": 4500
+    "priority": 4500,
+    "comment": ""
   },
   {
     "id": 46,
     "tags": ["p5js", "js"],
     "type": "video",
     "videoId": "5N1MxLbfHtI",
-    "priority": 4600
+    "priority": 4600,
+    "comment": ""
   },
   {
     "id": 47,
     "tags": ["blender"],
     "type": "video",
     "videoId": "JqUHlqeyFlE",
-    "priority": 4700
+    "priority": 4700,
+    "comment": ""
   },
   {
     "id": 48,
     "tags": ["blender"],
     "type": "video",
     "videoId": "vOkpxTtS8LM",
-    "priority": 4800
+    "priority": 4800,
+    "comment": ""
   },
   {
     "id": 49,
     "tags": ["blender"],
     "type": "video",
     "videoId": "ucnpg62dRKY",
-    "priority": 4900
+    "priority": 4900,
+    "comment": ""
   },
   {
     "id": 50,
     "tags": ["blender"],
     "type": "video",
     "videoId": "5XRFd1Qti4Q",
-    "priority": 5000
+    "priority": 5000,
+    "comment": ""
   },
   {
     "id": 51,
     "tags": ["blender"],
     "type": "video",
     "videoId": "qIWlKqzwCUI",
-    "priority": 5100
+    "priority": 5100,
+    "comment": ""
   },
   {
     "id": 52,
     "tags": ["blender"],
     "type": "video",
     "videoId": "bvyNCym1xsI",
-    "priority": 5200
+    "priority": 5200,
+    "comment": ""
   },
   {
     "id": 53,
     "tags": ["blender"],
     "type": "video",
     "videoId": "SVWRZSYEpT4",
-    "priority": 5300
+    "priority": 5300,
+    "comment": ""
   },
   {
     "id": 54,
     "tags": ["blender"],
     "type": "video",
     "videoId": "vd2njUmM7vY",
-    "priority": 5400
+    "priority": 5400,
+    "comment": ""
   },
   {
     "id": 55,
     "tags": ["js", "pixi"],
     "type": "video",
     "videoId": "1miwDSNN8Qs",
-    "priority": 5500
+    "priority": 5500,
+    "comment": "矩形分割のタイミングをずらすとどうなるかを確認したくて作ったもの。円の描画は領域の大きさとディレイ時間の可視化を兼ねている。"
   },
   {
     "id": 56,
     "tags": ["blender"],
     "type": "video",
     "videoId": "URmW86LlKRI",
-    "priority": 5600
+    "priority": 5600,
+    "comment": "頂点数多めの球を用意して、各ボールとの距離に応じて法線方向に頂点位置を上下させるとボヨンボヨン感がお手軽に出る（けどめっちゃ重い）。"
   },
   {
     "id": 57,
     "tags": ["ae"],
     "type": "video",
     "videoId": "Q2BViXPc0oI",
-    "priority": 5700
+    "priority": 5700,
+    "comment": "意図的に雑な線をコードで描く方法を動画でまとめてみた。"
   },
   {
     "id": 58,
     "tags": ["p5js", "js"],
     "type": "video",
     "videoId": "xY-0iZk-7qQ",
-    "priority": 5800
+    "priority": 5800,
+    "comment": "雑な円をコードで書きたくて色々と試していたけど、下記の方法でだいたい満足できるレベルにはなった。<br>1. 始点と終点を繋げないようにする<br>2. 真円の円周上に等間隔で点を置き、その点をランダムに少しずらして、円を描くときにその地点を通るようにする"
   },
   {
     "id": 59,
     "tags": ["p5js", "js"],
     "type": "video",
     "videoId": "X9DTeYmv2v4",
-    "priority": 5900
+    "priority": 5900,
+    "comment": "矩形分割をする際に、パーリンノイズで分断位置を決めるとどうなるかの実験。"
   },
   {
     "id": 60,
     "tags": ["p5js", "js"],
     "type": "video",
     "videoId": "-6zFmGBzK_g",
-    "priority": 6000
+    "priority": 6000,
+    "comment": "円を描画する際、もともとその領域にあったピクセルの色が自然と円の外に押し出されるようにする。"
   },
   {
     "id": 61,
     "tags": ["p5js", "js", "webgl"],
     "type": "video",
     "videoId": "abCRHbi3gek",
-    "priority": 6100
+    "priority": 6100,
+    "comment": "前に投稿した、円を描画する際、元々そこにあるピクセルが外側に押し出されるコードを改良したのでジャギーがかなり軽減された。あと、WebGLの勉強も兼ねてコードの大部分をGLSLで書き直したらめっちゃ高速化した。"
   },
   {
     "id": 62,
     "tags": ["p5js", "js", "webgl"],
     "type": "video",
     "videoId": "h_ZethrLhQk",
-    "priority": 6200
+    "priority": 6200,
+    "comment": "ピクセルに絵の具のような粘度を持たせて、それを箸で引っ張ったり渦を巻いたりすることができる。"
   },
   {
     "id": 63,
     "tags": ["p5js", "js"],
     "type": "video",
     "videoId": "TROZUyvq4RI",
-    "priority": 6300
+    "priority": 6300,
+    "comment": "跳ねるボールをコードで表現する。"
   },
   {
     "id": 64,
     "tags": ["three", "js"],
     "type": "video",
     "videoId": "yG-zdXytKck",
-    "priority": 2810
+    "priority": 2810,
+    "comment": ""
   },
   {
     "id": 65,
     "tags": ["three", "js"],
     "type": "video",
     "videoId": "Oi8OsBc0jfo",
-    "priority": 2820
+    "priority": 2820,
+    "comment": ""
   },
   {
     "id": 66,
     "tags": ["three", "js"],
     "type": "video",
     "videoId": "IHeL9GZqVQY",
-    "priority": 2830
+    "priority": 2830,
+    "comment": ""
   },
   {
     "id": 67,
     "tags": ["three", "js"],
     "type": "video",
     "videoId": "vgGB6Lk5sjQ",
-    "priority": 2840
+    "priority": 2840,
+    "comment": ""
   }
 ]

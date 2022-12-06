@@ -4,6 +4,7 @@ type WorkItem = {
   type: "image" | "video";
   videoId?: string;
   priority: number;
+  comment: string;
 };
 
 type Article = {

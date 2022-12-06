@@ -52,7 +52,7 @@ const Works: NextPage<Props> = ({ items }) => {
   }
 
   function getLink(item: WorkItem) {
-    const { id, type, videoId } = item;
+    const { id, type, videoId, comment } = item;
     if (type === "video") {
       const videoOptions = {
         playerVars: {
@@ -67,7 +67,12 @@ const Works: NextPage<Props> = ({ items }) => {
           host: "https://www.youtube.com",
         },
       };
-      return <YouTube videoId={videoId} opts={videoOptions} />;
+      return (
+        <>
+          <YouTube videoId={videoId} opts={videoOptions} />
+          <div className={videoAnnounce}>&#x1f4e2; Please, reload page if you can't watch the video.</div>
+        </>
+      );
     } else {
       return <img src={`/data/${id}/0.png`} alt="作品" />;
     }
@@ -85,6 +90,11 @@ const Works: NextPage<Props> = ({ items }) => {
         <div className={workTags}>
           <GapContainer gap={15}>{getTags(data)}</GapContainer>
         </div>
+        <div className={workComment}>
+          {data.comment.split("<br>").map((c) => (
+            <div>{c}</div>
+          ))}
+        </div>
       </div>
       <Footer />
     </>
@@ -92,6 +102,11 @@ const Works: NextPage<Props> = ({ items }) => {
 };
 
 export default Works;
+
+const videoAnnounce = css`
+  margin-top: 10px;
+  font-size: 12px;
+`;
 
 const item = css`
   display: flex;
@@ -111,6 +126,10 @@ const item = css`
 
 const workTags = css`
   display: flex;
+`;
+
+const workComment = css`
+  margin-top: 30px;
   margin-bottom: 120px;
 `;
 
