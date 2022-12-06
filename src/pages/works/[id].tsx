@@ -52,7 +52,7 @@ const Works: NextPage<Props> = ({ items }) => {
   }
 
   function getLink(item: WorkItem) {
-    const { id, type, videoId, comment } = item;
+    const { id, type, videoId } = item;
     if (type === "video") {
       const videoOptions = {
         playerVars: {
