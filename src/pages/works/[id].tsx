@@ -70,7 +70,7 @@ const Works: NextPage<Props> = ({ items }) => {
       return (
         <>
           <YouTube videoId={videoId} opts={videoOptions} />
-          <div className={videoAnnounce}>&#x1f4e2; Please, reload page if you can&apos;t watch the video.</div>
+          <div className={videoAnnounce}>&#x1f4e2; Please reload page if you can&apos;t watch the video.</div>
         </>
       );
     } else {
