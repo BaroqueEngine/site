@@ -98,7 +98,7 @@ const footer = css`
   border-top: 1px solid #444;
   border-bottom: 5px solid #f7383f;
 
-  @medilink (max-width: 700px) {
+  @media (max-width: 700px) {
     flex-direction: column;
     height: auto;
   }
@@ -111,7 +111,7 @@ const footerLeft = css`
   width: 33vw;
   border-right: 1px solid #444;
 
-  @medilink (max-width: 700px) {
+  @media (max-width: 700px) {
     order: 1;
     width: 100%;
     border-right: 0;
@@ -138,11 +138,11 @@ const footerRight = css`
     margin-bottom: 0.6rem;
   }
 
-  @medilink (max-width: 700px) {
+  @media (max-width: 700px) {
     order: 0;
   }
 
-  @medilink (max-width: 560px) {
+  @media (max-width: 560px) {
     display: block;
     margin-top: 30px;
   }
@@ -151,7 +151,7 @@ const footerRight = css`
 const footerContent = css`
   padding: 25px;
 
-  @medilink (max-width: 560px) {
+  @media (max-width: 560px) {
     display: flex;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -162,7 +162,7 @@ const footerTitle = css`
   margin-bottom: 80px;
   color: #888;
 
-  @medilink (max-width: 560px) {
+  @media (max-width: 560px) {
     min-width: 100px;
     margin-bottom: 0;
   }
