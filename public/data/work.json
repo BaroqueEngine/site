@@ -513,5 +513,13 @@
     "videoId": "uVISXXLnNPs",
     "priority": 6800,
     "comment": "線同士がぶつからないように線を伸ばしていき、分岐点と行き止まりに円を描画する。"
+  },
+  {
+    "id": 69,
+    "tags": ["p5js", "js"],
+    "type": "video",
+    "videoId": "bamJz1aL63w",
+    "priority": 6900,
+    "comment": "再帰的に矩形分割を行うことで領域を幾つか作り、それぞれの領域からはみでないように棒状のパーティクルを移動させる。"
   }
 ]
