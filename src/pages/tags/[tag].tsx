@@ -5,12 +5,12 @@ import Footer from "../../components/Footer";
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import json from "../../../public/data/work.json";
-import LinkImage from "atoms/LinkImage";
 import GapContainer from "molecules/GapContainer";
 import ItemTag from "organisms/ItemTag";
 import VGapContainer from "molecules/VGapContainer";
 import { ItemTagList } from "organisms/ItemTagList";
 import { useState } from "react";
+import HoverLinkImage from "atoms/HoverLinkImage";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tags: string[] = ["all"];
@@ -77,7 +77,7 @@ const Tags: NextPage<Props> = ({ items }) => {
           {newWorkItems.map((o: any) => (
             <div key={`${o.id}`} className={workItem}>
               <VGapContainer gap={10}>
-                <LinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} isBlank={false} />
+                <HoverLinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} isBlank={false} />
                 <GapContainer gap={10}>
                   {o.tags.map((tag: string) => {
                     return <ItemTag key={tag} tag={tag} />;

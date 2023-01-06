@@ -1,9 +1,9 @@
 import { css } from "@emotion/css";
 import ItemTag from "organisms/ItemTag";
 import GapContainer from "molecules/GapContainer";
-import LinkImage from "atoms/LinkImage";
 import VGapContainer from "molecules/VGapContainer";
 import MoreButton from "organisms/MoreButton";
+import HoverLinkImage from "atoms/HoverLinkImage";
 
 type Props = {
   items: WorkItem[];
@@ -23,7 +23,7 @@ const IndexWork = ({ items }: Props) => {
             {items.slice(0, itemsPerPage).map((o) => (
               <div key={`${o.id}`} className={workItem}>
                 <VGapContainer gap={10}>
-                  <LinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} width={600} height={450} isBlank={false} />
+                  <HoverLinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} width={600} height={450} isBlank={false} />
                   <GapContainer gap={10}>
                     {o.tags.map((tag: string) => {
                       return <ItemTag key={tag} tag={tag} />;
