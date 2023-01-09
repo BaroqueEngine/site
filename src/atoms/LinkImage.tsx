@@ -8,11 +8,12 @@ type Props = {
   isBlank: boolean;
   width?: number;
   height?: number;
+  className?: string;
 };
 
-const LinkImage = ({ href, src, alt, isBlank, width, height }: Props) => {
+const LinkImage = ({ href, src, alt, isBlank, width, height, className }: Props) => {
   return (
-    <Link className={link} href={href} target={isBlank ? "_blank" : ""} rel={isBlank ? "noreferrer noopener" : ""}>
+    <Link className={`${link} ${className}`} href={href} target={isBlank ? "_blank" : ""} rel={isBlank ? "noreferrer noopener" : ""}>
       <img src={src} alt={alt} width={width} height={height} />
     </Link>
   );
