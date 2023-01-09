@@ -17,4 +17,5 @@ export default GapContainer;
 
 const container = css`
   display: flex;
+  flex-wrap: wrap;
 `;
