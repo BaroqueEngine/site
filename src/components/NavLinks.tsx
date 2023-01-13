@@ -42,7 +42,7 @@ const NavLinks = () => {
 
         return (
           <li key={i} className={navItem}>
-            <Link className={className} href={`#${links[i]}`}>
+            <Link className={className} href={`#${links[i]}`} scroll={false}>
               {name}
             </Link>
           </li>
