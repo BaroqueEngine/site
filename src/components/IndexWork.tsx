@@ -69,7 +69,11 @@ const workTitleEn = css`
   font-family: "Tungsten";
   font-size: min(20vw, 100px);
   font-weight: 500;
-  color: #f7383f;
+
+  background: linear-gradient(90deg, rgba(247, 56, 63, 1), rgba(252, 134, 65, 1));
+  background-clip: text;
+  text-fill-color: transparent;
+  text-align: center;
 `;
 
 const workItems = css`

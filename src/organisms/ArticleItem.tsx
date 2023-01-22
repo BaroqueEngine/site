@@ -55,7 +55,7 @@ const container = css`
   display: block;
   height: 100%;
   border-radius: 8px;
-  background-color: #195f63;
+  background-color: #23252c;
   text-decoration: none;
   box-shadow: 10px 10px 15px -10px black;
 `;

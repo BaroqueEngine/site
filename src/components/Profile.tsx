@@ -150,7 +150,7 @@ const skillListItem = css`
 const clip = css`
   width: 100%;
   height: 80px;
-  background-color: #31b8c0;
+  background-color: #262626;
   clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 0%);
   transform: translate(0, -1px);
 `;
@@ -169,7 +169,10 @@ const container = css`
 `;
 
 const worksTitleEn = css`
-  color: #f7383f;
+  background: linear-gradient(90deg, rgba(247, 56, 63, 1), rgba(252, 134, 65, 1));
+  background-clip: text;
+  text-fill-color: transparent;
+  text-align: center;
 `;
 
 const skillTitle = css`
