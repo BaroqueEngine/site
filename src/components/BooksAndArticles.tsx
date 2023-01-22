@@ -30,7 +30,7 @@ const BooksAndArticles = ({ articleItems }: Props) => {
 export default BooksAndArticles;
 
 const container = css`
-  background-color: #31b8c0;
+  background-color: #262626;
   padding-bottom: min(10vw, 140px);
   scroll-margin-top: -110px;
 `;
@@ -44,7 +44,10 @@ const clip = css`
 `;
 
 const worksTitleEn = css`
-  color: #000;
+  background: linear-gradient(90deg, rgba(247, 56, 63, 1), rgba(252, 134, 65, 1));
+  background-clip: text;
+  text-fill-color: transparent;
+  text-align: center;
 `;
 
 const booksContainer = css`

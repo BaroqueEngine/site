@@ -71,7 +71,9 @@ const Tags: NextPage<Props> = ({ items }) => {
     <>
       <Header />
       <div className={container}>
-        <div className={tagsCategoryTitle}>Category - {tagName}</div>
+        <div className={tagsCategoryTitle}>
+          <span>Category - {tagName}</span>
+        </div>
         {tag === "all" ? <ItemTagList selectTags={selectTags} setSelectTags={setSelectTags} /> : <></>}
         <div className={workItems}>
           {newWorkItems.map((o: any) => (
@@ -110,6 +112,13 @@ const tagsCategoryTitle = css`
   font-family: "Tungsten";
   font-size: 60px;
   font-weight: 500;
+
+  span {
+    background: linear-gradient(90deg, rgba(247, 56, 63, 1), rgba(252, 134, 65, 1));
+    background-clip: text;
+    text-fill-color: transparent;
+    text-align: center;
+  }
 `;
 
 const workItems = css`
