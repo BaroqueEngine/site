@@ -36,6 +36,12 @@
     "image_url": "/image/articles/5.png"
   },
   {
+    "title": "PixiJSでリサイズと回転が可能な描画オブジェクトを作る",
+    "description": "図形を編集できるソフトウェアなどでよく見かける、矩形オブジェクトをリサイズしたり回転したりできる機能が作りたくて先日コードを書いてみたが、想像以上に難しかったのでハマりポイントを含めた制作手順をここに書くことにした。",
+    "url": "https://zenn.dev/baroqueengine/articles/eca89a92db535d",
+    "image_url": "/image/articles/7.png"
+  },
+  {
     "title": "notion",
     "description": "notion公開用の雑多記事",
     "url": "https://baroqueengine.notion.site/notion-12d35b2653f24367ab617d16cf49f04a",
