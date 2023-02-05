@@ -42,6 +42,12 @@
     "image_url": "/image/articles/7.png"
   },
   {
+    "title": "2次ベジェ曲線のバウンディングボックスを求める",
+    "description": "求めるバウンディングボックスは2つあり、2次ベジェ曲線の3つの制御点（始点・制御点・終点）を囲む最小の矩形範囲と、実際に引かれるベジェ曲線を囲む最小の矩形範囲になる。",
+    "url": "https://zenn.dev/baroqueengine/articles/9fd55644bf79df",
+    "image_url": "/image/articles/8.png"
+  },
+  {
     "title": "notion",
     "description": "notion公開用の雑多記事",
     "url": "https://baroqueengine.notion.site/notion-12d35b2653f24367ab617d16cf49f04a",
