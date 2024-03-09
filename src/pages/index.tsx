@@ -29,7 +29,6 @@ const Home: NextPage<Props> = ({ items, articleItems }) => {
     <>
       <Header />
       <NavLinks />
-      <IndexVideo />
       <div>
         <IndexWork items={items} />
         <BooksAndArticles articleItems={articleItems} />
