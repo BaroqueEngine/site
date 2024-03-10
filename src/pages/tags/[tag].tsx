@@ -5,9 +5,7 @@ import Footer from "../../components/Footer";
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import json from "../../../public/data/work.json";
-import GapContainer from "molecules/GapContainer";
 import ItemTag from "organisms/ItemTag";
-import VGapContainer from "molecules/VGapContainer";
 import { ItemTagList } from "organisms/ItemTagList";
 import { useState } from "react";
 import HoverLinkImage from "atoms/HoverLinkImage";
@@ -78,14 +76,12 @@ const Tags: NextPage<Props> = ({ items }) => {
         <div className={workItems}>
           {newWorkItems.map((o: any) => (
             <div key={`${o.id}`} className={workItem}>
-              <VGapContainer gap={10}>
-                <HoverLinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} isBlank={false} />
-                <GapContainer gap={10}>
-                  {o.tags.map((tag: string) => {
-                    return <ItemTag key={tag} tag={tag} />;
-                  })}
-                </GapContainer>
-              </VGapContainer>
+              <HoverLinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} isBlank={false} />
+              <div className={workItemTags}>
+                {o.tags.map((tag: string) => {
+                  return <ItemTag key={tag} tag={tag} />;
+                })}
+              </div>
             </div>
           ))}
         </div>
@@ -135,4 +131,12 @@ const workItem = css`
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+`;
+
+const workItemTags = css`
+  display: flex;
+  column-gap: 10px;
 `;

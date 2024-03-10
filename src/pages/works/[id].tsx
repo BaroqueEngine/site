@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { GetStaticProps, NextPage } from "next";
 import json from "../../../public/data/work.json";
 import ItemTag from "organisms/ItemTag";
-import GapContainer from "molecules/GapContainer";
 import YouTube from "react-youtube";
 
 export async function getStaticPaths() {
@@ -88,7 +87,7 @@ const Works: NextPage<Props> = ({ items }) => {
       <div className={item}>
         <div className={workItem}>{getLink(data)}</div>
         <div className={workTags}>
-          <GapContainer gap={15}>{getTags(data)}</GapContainer>
+          {getTags(data)}
         </div>
         <div className={workComment}>
           {data.comment.split("<br>").map((c, i) => (
@@ -126,6 +125,7 @@ const item = css`
 
 const workTags = css`
   display: flex;
+  column-gap: 15px;
 `;
 
 const workComment = css`

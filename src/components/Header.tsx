@@ -1,6 +1,5 @@
 import { css, cx } from "@emotion/css";
 import LinkImage from "atoms/LinkImage";
-import GapContainer from "molecules/GapContainer";
 import Head from "next/head";
 import Link from "next/link";
 import Script from "next/script";
@@ -37,11 +36,9 @@ const Header = () => {
           </Link>
         </h1>
         <div className={headerSocialLinks}>
-          <GapContainer gap={15}>
-            <LinkImage href="https://twitter.com/baroqueengine" src="/image/social/twitter.png" alt="Twitter" isBlank={true} />
-            <LinkImage href="https://github.com/BaroqueEngine" src="/image/social/github.png" alt="GitHub" isBlank={true} />
-            <LinkImage href="https://zenn.dev/baroqueengine" src="/image/social/zenn.png" alt="Zenn" isBlank={true} />
-          </GapContainer>
+          <LinkImage href="https://twitter.com/baroqueengine" src="/image/social/twitter.png" alt="Twitter" isBlank={true} />
+          <LinkImage href="https://github.com/BaroqueEngine" src="/image/social/github.png" alt="GitHub" isBlank={true} />
+          <LinkImage href="https://zenn.dev/baroqueengine" src="/image/social/zenn.png" alt="Zenn" isBlank={true} />
         </div>
         <div className={getDrawerOpenCss()}>
           <label htmlFor="drawer-check" className={drawerOpenLabel} onClick={onDrawerClick}>
@@ -67,6 +64,8 @@ const headerSocialLinks = css`
   right: 0;
   top: 0;
   padding: 18px 15px;
+  display: flex;
+  column-gap: 15px;
 
   @media (max-width: 600px) {
     display: none;
