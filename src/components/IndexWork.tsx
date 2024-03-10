@@ -1,7 +1,5 @@
 import { css } from "@emotion/css";
 import ItemTag from "organisms/ItemTag";
-import GapContainer from "molecules/GapContainer";
-import VGapContainer from "molecules/VGapContainer";
 import MoreButton from "organisms/MoreButton";
 import HoverLinkImage from "atoms/HoverLinkImage";
 
@@ -22,14 +20,12 @@ const IndexWork = ({ items }: Props) => {
           <div className={workItems}>
             {items.slice(0, itemsPerPage).map((o) => (
               <div key={`${o.id}`} className={workItem}>
-                <VGapContainer gap={10}>
-                  <HoverLinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} width={600} height={450} isBlank={false} />
-                  <GapContainer gap={10}>
+                <HoverLinkImage href={`/works/${o.id}`} src={`/data/${o.id}/t.png`} alt={`作品 ${o.id}`} width={600} height={450} isBlank={false} />
+                  <div className={workItemTags}>
                     {o.tags.map((tag: string) => {
                       return <ItemTag key={tag} tag={tag} />;
                     })}
-                  </GapContainer>
-                </VGapContainer>
+                  </div>
               </div>
             ))}
           </div>
@@ -89,4 +85,12 @@ const workItem = css`
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+`;
+
+const workItemTags = css`
+  display: flex;
+  column-gap: 10px;
 `;

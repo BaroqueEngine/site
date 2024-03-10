@@ -1,6 +1,5 @@
 import { css } from "@emotion/css";
 import LinkImage from "atoms/LinkImage";
-import GapContainer from "molecules/GapContainer";
 
 const Profile = () => {
   return (
@@ -16,11 +15,9 @@ const Profile = () => {
         <div className={profileName}>miku</div>
 
         <div className={social}>
-          <GapContainer gap={15}>
-            <LinkImage className={socialLink} href="https://twitter.com/baroqueengine" src="/image/profile/twitter.png" alt="Twitter" isBlank={true} />
-            <LinkImage className={socialLink} href="https://github.com/BaroqueEngine" src="/image/profile/github.png" alt="GitHub" isBlank={true} />
-            <LinkImage className={socialLink} href="https://zenn.dev/baroqueengine" src="/image/profile/zenn.png" alt="Zenn" isBlank={true} />
-          </GapContainer>
+          <LinkImage className={socialLink} href="https://twitter.com/baroqueengine" src="/image/profile/twitter.png" alt="Twitter" isBlank={true} />
+          <LinkImage className={socialLink} href="https://github.com/BaroqueEngine" src="/image/profile/github.png" alt="GitHub" isBlank={true} />
+          <LinkImage className={socialLink} href="https://zenn.dev/baroqueengine" src="/image/profile/zenn.png" alt="Zenn" isBlank={true} />
         </div>
 
         <div className={skillTitle}>My Skills - Languages</div>
@@ -108,6 +105,7 @@ const social = css`
   justify-content: center;
   margin-top: 80px;
   margin-bottom: 100px;
+  column-gap: 15px;
 `;
 
 const socialLink = css`
