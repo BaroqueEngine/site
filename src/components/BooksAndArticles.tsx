@@ -46,7 +46,7 @@ const clip = css`
 const worksTitleEn = css`
   background: linear-gradient(90deg, rgba(247, 56, 63, 1), rgba(252, 134, 65, 1));
   background-clip: text;
-  text-fill-color: transparent;
+  color: transparent;
   text-align: center;
 `;
 
