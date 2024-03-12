@@ -113,6 +113,7 @@ const tagsCategoryTitle = css`
     background: linear-gradient(90deg, rgba(247, 56, 63, 1), rgba(252, 134, 65, 1));
     background-clip: text;
     text-align: center;
+    color: transparent;
   }
 `;
 
