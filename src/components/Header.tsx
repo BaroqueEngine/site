@@ -168,5 +168,11 @@ const headerSiteTitle = css`
   letter-spacing: 0.05rem;
 `;
 const headerSiteTitleLink = css`
+  font-family: "Tungsten";
+  font-size: min(calc(24 / var(--unit)), 24px);
   text-decoration: none;
+
+  @media (max-width: 767px) {
+    font-size: calc(18 / var(--unitSp));
+  }
 `;

@@ -59,6 +59,10 @@ export default Profile;
 
 const skills = css`
   margin-top: min(calc(60 / var(--unit)), 60px);
+
+  @media (max-width: 767px) {
+    margin-top: calc(60 / var(--unitSp));
+  }
 `;
 
 const skillTitle = css`
@@ -111,5 +115,9 @@ const profileImage = css`
   img {
     border-radius: 9999px;
     border: min(calc(4 / var(--unit)), 4px) solid #aaa;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: calc(24 / var(--unitSp));
   }
 `;

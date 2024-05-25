@@ -7,6 +7,10 @@
   --unit: 1000 * 100vw;
   --unitSp: 375 * 100vw;
 }
+@font-face {
+  font-family: "Tungsten";
+  src: url(/Tungsten.woff);
+}
 ::selection {
   color: #f7383f;
 }
