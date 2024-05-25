@@ -4,8 +4,7 @@ import Link from "next/link";
 const MoreButton = () => {
   return (
     <Link href="/tags/all" className={container}>
-      <span>MORE</span>
-      <span className={icon}>&gt;</span>
+      <span>もっと見る</span>
     </Link>
   );
 };
@@ -14,42 +13,25 @@ export default MoreButton;
 
 const container = css`
   display: block;
-  width: 200px;
-  height: 60px;
-  margin-top: 30px;
+  width: min(calc(240 / var(--unit)), 240px);
+  line-height: min(calc(60 / var(--unit)), 60px);
+  margin-top: min(calc(60 / var(--unit)), 60px);
   margin-left: auto;
   margin-right: auto;
-  background: #000;
   text-align: center;
-  line-height: 60px;
-  position: relative;
-  font-family: "Tungsten";
-  font-weight: 500;
-  font-size: 24px;
-  letter-spacing: 0.1rem;
+  font-size: min(calc(20 / var(--unit)), 20px);
+  letter-spacing: min(calc(2 / var(--unit)), 2px);
   text-decoration: none;
-
-  span {
-    display: inline-block;
-    transition: all 0.25s;
-  }
+  border: 1px solid #fff;
+  border-radius: min(calc(10 / var(--unit)), 10px);
 
   :hover {
-    border: 1px solid #aaa;
+    background-color: #222;
   }
 
-  :hover span:first-child {
-    transform: translate(-10px, 0);
+  @media (max-width: 767px) {
+    width: calc(200 / var(--unitSp));
+    font-size: calc(16 / var(--unitSp));
+    line-height: calc(32 / var(--unitSp));
   }
-
-  :hover span:last-child {
-    opacity: 1;
-  }
-`;
-
-const icon = css`
-  display: inline-block;
-  position: absolute;
-  left: 120px;
-  opacity: 0;
 `;
