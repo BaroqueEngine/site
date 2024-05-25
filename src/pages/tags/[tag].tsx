@@ -103,7 +103,6 @@ const tagsCategoryTitle = css`
   justify-content: center;
   margin-top: 100px;
   margin-bottom: 60px;
-  font-family: "Tungsten";
   font-size: 60px;
   font-weight: 500;
 

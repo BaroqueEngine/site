@@ -97,7 +97,6 @@ const skillDetail = css`
 
 const profileName = css`
   margin-top: min(calc(20 / var(--unit)), 20px);
-  font-family: "Tungsten";
   font-size: min(calc(40 / var(--unit)), 40px);
   font-weight: 500;
   text-align: center;
