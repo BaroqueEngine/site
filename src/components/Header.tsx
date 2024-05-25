@@ -111,7 +111,6 @@ const drawerContent = css`
     display: flex;
     justify-content: center;
     flex-flow: column;
-    font-family: "Tungsten";
     font-size: 40px;
     font-weight: 500;
   }
@@ -164,11 +163,16 @@ const headerContainer = css`
 `;
 const headerSiteTitle = css`
   padding: 15px;
-  font-family: "Tungsten";
   font-size: 28px;
   font-weight: 500;
   letter-spacing: 0.05rem;
 `;
 const headerSiteTitleLink = css`
+  font-family: "Tungsten";
+  font-size: min(calc(24 / var(--unit)), 24px);
   text-decoration: none;
+
+  @media (max-width: 767px) {
+    font-size: calc(18 / var(--unitSp));
+  }
 `;

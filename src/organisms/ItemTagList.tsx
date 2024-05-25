@@ -72,7 +72,6 @@ const container = css`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 60px;
-  font-family: "Tungsten";
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.05rem;
