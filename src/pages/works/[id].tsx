@@ -1,6 +1,5 @@
 import Header from "../../components/Header";
 import { css } from "@emotion/css";
-import Footer from "../../components/Footer";
 import { useRouter } from "next/router";
 import { GetStaticProps, NextPage } from "next";
 import json from "../../../public/data/work.json";
@@ -95,7 +94,6 @@ const Works: NextPage<Props> = ({ items }) => {
           ))}
         </div>
       </div>
-      <Footer />
     </>
   );
 };

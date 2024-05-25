@@ -20,7 +20,6 @@ const ArticleItem = ({ article }: Props) => {
           </div>
           <div className={text}>
             <div className={title}>{article.title}</div>
-            <div className={description}>{article.description}</div>
           </div>
         </div>
       </Link>
@@ -31,33 +30,23 @@ const ArticleItem = ({ article }: Props) => {
 export default ArticleItem;
 
 const title = css`
-  margin-bottom: 15px;
-  font-size: 24px;
+  font-size: min(calc(18 / var(--unit)), 18px);
   font-weight: 600;
   color: #ddd;
-`;
 
-const description = css`
-  font-size: 14px;
-  color: #aaa;
-  text-align: justify;
-
-  @media (max-width: 600px) {
-    display: none;
+  @media (max-width: 767px) {
+    font-size: calc(14 / var(--unitSp));
   }
 `;
 
 const text = css`
-  padding: 15px;
+  padding: min(calc(15 / var(--unit)), 15px);
 `;
 
 const container = css`
   display: block;
   height: 100%;
-  border-radius: 8px;
-  background-color: #23252c;
   text-decoration: none;
-  box-shadow: 10px 10px 15px -10px black;
 `;
 
 const imageContainer = css`
@@ -68,6 +57,6 @@ const imageContainer = css`
 const image = css`
   width: 100%;
   height: 150px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-size: cover;
 `;

@@ -27,10 +27,4 @@ const link = css`
   img {
     transition: transform 1.5s;
   }
-
-  :hover {
-    img {
-      transform: scale(1.25);
-    }
-  }
 `;
