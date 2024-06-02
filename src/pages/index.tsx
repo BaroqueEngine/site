@@ -6,6 +6,7 @@ import { GetStaticProps, NextPage } from "next";
 import workJson from "../../public/data/work.json";
 import articlesJson from "../../public/data/articles.json";
 import { css } from "@emotion/css";
+import Footer from "components/Footer";
 
 export const getStaticProps: GetStaticProps = async () => {
   const items: WorkItem[] = workJson as WorkItem[];
@@ -40,6 +41,7 @@ const Home: NextPage<Props> = ({ items, articleItems }) => {
           <Profile />
         </section>
       </div>
+      <Footer />
     </>
   ); 
 };
