@@ -59,4 +59,8 @@ const image = css`
   height: 150px;
   border-radius: 5px;
   background-size: cover;
+
+  @media (max-width: 767px) {
+    height: calc(150 / var(--unitSp));
+  }
 `;

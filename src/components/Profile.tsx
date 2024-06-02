@@ -81,6 +81,7 @@ const skillItems = css`
 
   @media (max-width: 767px) {
     font-size: calc(14 / var(--unitSp));
+    margin-bottom: calc(5 / var(--unitSp));
   }
 `;
 
@@ -97,6 +98,10 @@ const skillDetail = css`
   padding-right: min(calc(10 / var(--unit)), 10px);
   padding-top: min(calc(10 / var(--unit)), 10px);
   margin-bottom: min(calc(15 / var(--unit)), 15px);
+
+  @media (max-width: 767px) {
+    margin-bottom: calc(15 / var(--unitSp));
+  }
 `;
 
 const profileName = css`
