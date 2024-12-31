@@ -1,4 +1,4 @@
-import { css } from "@emotion/css";
+import styles from "@/css/LinkImage.module.css";
 import Link from "next/link";
 
 type Props = {
@@ -11,20 +11,10 @@ type Props = {
   className?: string;
 };
 
-const LinkImage = ({ href, src, alt, isBlank, width, height, className }: Props) => {
+export default function LinkImage({ href, src, alt, isBlank, width, height, className }: Props) {
   return (
-    <Link className={`${link} ${className}`} href={href} target={isBlank ? "_blank" : ""} rel={isBlank ? "noreferrer noopener" : ""}>
+    <Link className={`${styles.link} ${className}`} href={href} target={isBlank ? "_blank" : ""} rel={isBlank ? "noreferrer noopener" : ""}>
       <img src={src} alt={alt} width={width} height={height} />
     </Link>
   );
-};
-
-export default LinkImage;
-
-const link = css`
-  transition: opacity 0.25s;
-
-  :hover {
-    opacity: 0.5;
-  }
-`;
+}

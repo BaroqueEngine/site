@@ -1,0 +1,37 @@
+.title {
+  font-size: min(calc(18 * var(--unit)), 18px);
+  font-weight: 600;
+  color: #ddd;
+}
+
+.text {
+  padding: min(calc(15 * var(--unit)), 15px);
+}
+
+.container {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: calc(14 * var(--unitSp));
+  }
+
+  .image {
+    height: calc(150 * var(--unitSp));
+  }
+}

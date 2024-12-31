@@ -1,0 +1,32 @@
+.link {
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-family: "Mono", serif;
+  letter-spacing: 1px;
+  transition: opacity 0.2s;
+}
+
+.container:hover {
+  opacity: 0.8;
+}
+
+.short {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .normal {
+    display: none;
+  }
+
+  .short {
+    display: block;
+  }
+}

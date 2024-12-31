@@ -1,0 +1,8 @@
+{
+  "formatter": {
+    "lineEnding": "lf",
+    "lineWidth": 320,
+    "indentStyle": "space",
+    "indentWidth": 2
+  }
+}
