@@ -1,0 +1,8 @@
+.link {
+  overflow: hidden;
+  transition: opacity 0.25s;
+}
+
+.link img {
+  transition: transform 1.5s;
+}

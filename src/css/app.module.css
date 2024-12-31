@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: min(calc(150 * var(--unit)), 150px);
+  width: min(calc(1000 * var(--unit)), 1000px);
+  margin-top: min(calc(150 * var(--unit)), 150px);
+  margin-bottom: min(calc(150 * var(--unit)), 150px);
+  padding: 0 min(calc(15 * var(--unit)), 15px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  padding-bottom: min(calc(30 * var(--unit)), 30px);
+  font-size: min(calc(30 * var(--unit)), 30px);
+}
+
+@media (max-width: 767px) {
+  .container {
+    margin-top: calc(100 * var(--unitSp));
+    padding: 0 calc(15 * var(--unitSp));
+  }
+
+  .title {
+    font-size: calc(24 * var(--unitSp));
+  }
+}
