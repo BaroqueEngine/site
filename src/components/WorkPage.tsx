@@ -7,15 +7,15 @@ import ItemTag from "@/organisms/ItemTag";
 import YouTube from "react-youtube";
 
 type Props = {
-  wordId: number;
+  workId: number;
 };
 
-export default function WorkPage({ wordId }: Props) {
+export default function WorkPage({ workId }: Props) {
   const items: WorkItem[] = getWorkItems();
   let data: WorkItem = items[0];
 
   for (const item of items) {
-    if (item.id === wordId) {
+    if (item.id === workId) {
       data = item;
     }
   }

@@ -1,3 +1,8 @@
+type PlayItem = {
+  id: string;
+  priority: number;
+};
+
 type WorkItem = {
   id: number;
   tags: string[];
