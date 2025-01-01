@@ -16,5 +16,5 @@ export async function generateStaticParams() {
 export default async function Works({ params }: Props) {
   const { id } = await params;
 
-  return <WorkPage wordId={Number(id)} />;
+  return <WorkPage workId={Number(id)} />;
 }
