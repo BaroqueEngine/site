@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+
+const allPages = await getCollection('docs');
+
+type Page = (typeof allPages)[0];
+
+const groupedPages: Record<string, Page[]> = {};
+
+for (const page of allPages) {
+  // 変更点1：'page.slug' を 'page.id' でチェックします
+  if (page.id === 'index.mdx' || !page.data.title) {
+    continue;
+  }
+
+  // 変更点2：'page.slug' の代わりに 'page.id' を使います
+  const pathParts = page.id.split('/');
+  
+  if (pathParts.length > 1) {
+    const dirName = pathParts[0];
+
+    if (!groupedPages[dirName]) {
+      groupedPages[dirName] = [];
+    }
+    groupedPages[dirName].push(page);
+  }
+}
+---
+
+<div>
+  {Object.keys(groupedPages).sort().map(dirName => (
+    <>
+      <h2 class="dir-heading">{dirName.charAt(0).toUpperCase() + dirName.slice(1)}</h2>
+      <ul>
+        {groupedPages[dirName].map(page => (
+          <li>
+            {/* 変更点3：page.id から拡張子を取り除いてURLを生成します */}
+            <a href={`/${page.id.replace(/\.mdx?$/, '')}`}>{page.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  ))}
+</div>
+
+<style>
+  .dir-heading {
+    font-size: 1.5em;
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--sl-color-gray-5);
+  }
+</style>
