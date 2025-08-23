@@ -10,6 +10,13 @@ export default defineConfig({
 		starlight({
 			title: 'BAROQUE ENGINE',
 			pagination: false,
+			defaultLocale: "ja",
+      locales: {
+        root: {
+          label: 'Japan',
+          lang: 'ja',
+        },
+      },
 		}),
 	],
 });
