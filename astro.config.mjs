@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { starlightKatex } from 'starlight-katex';
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +18,9 @@ export default defineConfig({
           lang: 'ja',
         },
       },
+      plugins: [
+        starlightKatex(),
+      ],
 		}),
 	],
 });
