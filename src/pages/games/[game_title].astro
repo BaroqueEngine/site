@@ -1,0 +1,197 @@
+---
+// ゲームタイトルから対応するゲームファイルを動的に読み込む
+const { game_title } = Astro.params;
+
+// ゲームファイルの存在確認とメタデータの取得
+interface GameMetadata {
+  title: string;
+  description: string;
+  author?: string;
+  version?: string;
+}
+
+let gameData: GameMetadata | null = null;
+let gameHtml: string = '';
+let error: string | null = null;
+
+try {
+  // publicフォルダのゲームディレクトリを参照
+  // ゲームは public/games/{game_title}/ に配置
+  // 例: public/games/my-game/index.html
+  
+  if (!game_title || typeof game_title !== 'string') {
+    error = 'ゲームタイトルが指定されていません';
+  } else {
+    // ゲームメタデータファイルの読み込みを試みる
+    // 実際の実装では、メタデータはJSONまたは別の方法で管理することを推奨
+    gameData = {
+      title: game_title,
+      description: 'ブラウザゲーム',
+    };
+  }
+} catch (e) {
+  error = '指定されたゲームが見つかりません';
+}
+
+export async function getStaticPaths() {
+  // public/games ディレクトリのサブフォルダをスキャン
+  const fs = await import('fs');
+  const path = await import('path');
+  
+  const gamesDir = path.join(process.cwd(), 'public', 'games');
+  
+  // ディレクトリが存在しない場合は空の配列を返す
+  if (!fs.existsSync(gamesDir)) {
+    return [];
+  }
+  
+  // games ディレクトリ内のフォルダを取得
+  const games = fs
+    .readdirSync(gamesDir, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => ({
+      params: { game_title: dirent.name },
+    }));
+  
+  return games;
+}
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{gameData?.title || 'ゲーム'} - BAROQUE ENGINE</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .game-container {
+        width: 100%;
+        max-width: 1200px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .game-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .game-header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .game-header p {
+        font-size: 1.1em;
+        opacity: 0.95;
+      }
+
+      .game-content {
+        position: relative;
+        background: #f5f5f5;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+      }
+
+      .game-frame {
+        width: 100%;
+        height: 100%;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 8px;
+      }
+
+      .error-message {
+        text-align: center;
+        padding: 60px 30px;
+        color: #d32f2f;
+        font-size: 1.2em;
+      }
+
+      .error-details {
+        margin-top: 20px;
+        font-size: 0.9em;
+        color: #666;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #667eea;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+      }
+
+      .back-link:hover {
+        background: #764ba2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="game-header">
+        <h1>{gameData?.title || 'ゲーム'}</h1>
+        <p>{gameData?.description || 'ブラウザゲームをプレイ'}</p>
+        {gameData?.author && <p>制作者: {gameData.author}</p>}
+      </div>
+
+      <div class="game-content">
+        {error ? (
+          <div class="error-message">
+            <p>⚠️ {error}</p>
+            <div class="error-details">
+              <p>ゲームが見つかりません。</p>
+              <a href="/" class="back-link">ホームに戻る</a>
+            </div>
+          </div>
+        ) : (
+          <div class="game-frame">
+            <iframe
+              src={`/games/${game_title}/index.html`}
+              title={gameData?.title || 'ゲーム'}
+              sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-fullscreen"
+              allowfullscreen></iframe>
+          </div>
+        )}
+      </div>
+    </div>
+  </body>
+</html>
