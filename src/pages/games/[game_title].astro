@@ -34,26 +34,30 @@ try {
 }
 
 export async function getStaticPaths() {
-  // public/games ディレクトリのサブフォルダをスキャン
+  // public/static-games を優先して、存在しなければ public/games を参照する
   const fs = await import('fs');
   const path = await import('path');
-  
-  const gamesDir = path.join(process.cwd(), 'public', 'games');
-  
-  // ディレクトリが存在しない場合は空の配列を返す
-  if (!fs.existsSync(gamesDir)) {
-    return [];
+
+  const candidates = [
+    path.join(process.cwd(), 'public', 'static-games'),
+    path.join(process.cwd(), 'public', 'games'),
+  ];
+
+  const foundNames = new Set();
+
+  for (const dir of candidates) {
+    if (!fs.existsSync(dir)) continue;
+
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.isDirectory()) foundNames.add(entry.name);
+    }
+    // static-games が見つかったら優先する（上記候補順なので続けて収集して重複排除）
   }
-  
-  // games ディレクトリ内のフォルダを取得
-  const games = fs
-    .readdirSync(gamesDir, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
-    .map((dirent) => ({
-      params: { game_title: dirent.name },
-    }));
-  
-  return games;
+
+  if (foundNames.size === 0) return [];
+
+  return Array.from(foundNames).map((name) => ({ params: { game_title: name } }));
 }
 ---
 
@@ -185,7 +189,7 @@ export async function getStaticPaths() {
         ) : (
           <div class="game-frame">
             <iframe
-              src={`/games/${game_title}/index.html`}
+              src={`/static-games/${game_title}/index.html`}
               title={gameData?.title || 'ゲーム'}
               sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-fullscreen"
               allowfullscreen></iframe>
