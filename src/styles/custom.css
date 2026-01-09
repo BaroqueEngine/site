@@ -1,0 +1,9 @@
+/* Starlight custom styles - extend defaults */
+
+:root {
+  --docs-h2-size: 1.75rem;
+}
+
+.sl-markdown-content h2:not(:where(.not-content *)) {
+  font-size: var(--docs-h2-size);
+}

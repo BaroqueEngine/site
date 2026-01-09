@@ -12,6 +12,7 @@ export default defineConfig({
 			title: 'BAROQUE ENGINE',
 			pagination: false,
 			defaultLocale: "ja",
+      customCss: ['./src/styles/custom.css'],
       locales: {
         root: {
           label: 'Japan',
