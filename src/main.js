@@ -61,8 +61,6 @@ const rows = [
   ["host", "baroqueengine.net"],
   ["games", String(games.length)],
   ["latest", games.at(-1).id],
-  ["engine", "vite + html"],
-  ["deploy", "github pages"],
   ["theme", "solitude"],
 ];
 for (const [key, value] of rows) {
