@@ -1,4 +1,4 @@
-# GitHub PagesにAstroサイトをデプロイするためのワークフロー
+# public/ と各ゲーム（games.txt）をビルドして GitHub Pages にデプロイするワークフロー
 name: Deploy to GitHub Pages
 
 on:
@@ -6,6 +6,10 @@ on:
   push:
     branches:
       - main
+  # ゲームのリポジトリの release ブランチが更新されたときに実行
+  repository_dispatch:
+    types:
+      - game-released
   # Actionsタブから手動で実行することも可能
   workflow_dispatch:
 
@@ -15,30 +19,37 @@ permissions:
   pages: write
   id-token: write
 
-# 1つのジョブでビルドとデプロイを実行
+# 連続で更新されたときは古い実行をキャンセルせず、順番に処理する
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout # 1. リポジトリのコードをチェックアウト
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js # 2. Node.js環境をセットアップ
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: "npm" # npmのキャッシュを有効化して高速化
+          node-version: 22
 
-      - name: Install dependencies & Build # 3. 依存関係のインストールとビルド
-        run: |
-          npm ci
-          npm run build
+      - name: Build site and games
+        env:
+          # lost001 などの非公開リポジトリを読むためのトークン
+          GAMES_TOKEN: ${{ secrets.GAMES_TOKEN }}
+        run: bash scripts/build.sh
 
-      - name: Upload artifact # 4. ビルド成果物をアップロード
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # Astroのビルド出力ディレクトリ
+          path: ./_site
 
-      - name: Deploy to GitHub Pages # 5. GitHub Pagesにデプロイ
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
