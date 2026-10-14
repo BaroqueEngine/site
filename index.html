@@ -3,30 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101315">
   <title>BAROQUE ENGINE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
   <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
-  <main>
-    <h1>BAROQUE ENGINE</h1>
+  <header class="bar">
+    <nav class="workspaces" aria-label="workspaces">
+      <span class="ws is-active">1</span>
+      <span class="ws">2</span>
+      <span class="ws">3</span>
+    </nav>
+    <time class="clock" id="clock"></time>
+    <span class="host">baroqueengine.net</span>
+  </header>
 
-    <section>
-      <h2>Games</h2>
-      <ul class="games">
-        <li>
-          <a href="lost001/">
-            <span class="title">LOST CHRONICLES - 灰の底編</span>
-            <span class="id">lost001</span>
-          </a>
-        </li>
-        <li>
-          <a href="lost002/">
-            <span class="title">LOST CHRONICLES - 灰の町編</span>
-            <span class="id">lost002</span>
-          </a>
-        </li>
-      </ul>
+  <main class="desktop">
+    <!-- 左上: エディタ風の README -->
+    <section class="win win-editor is-focused" aria-labelledby="editor-title">
+      <div class="win-title" id="editor-title">nvim README.md</div>
+      <div class="editor">
+        <ol class="lines" id="readme"></ol>
+        <div class="statusline">
+          <span class="mode">NORMAL</span>
+          <span>~/README.md</span>
+          <span class="statusline-rule"></span>
+          <span>utf-8</span>
+          <span>markdown</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 右上: fastfetch 風の情報 -->
+    <section class="win win-fetch" aria-labelledby="fetch-title">
+      <div class="win-title" id="fetch-title">fastfetch</div>
+      <div class="fetch">
+        <pre class="logo" aria-hidden="true">
+ ██████╗ ███████╗
+ ██╔══██╗██╔════╝
+ ██████╔╝█████╗
+ ██╔══██╗██╔══╝
+ ██████╔╝███████╗
+ ╚═════╝ ╚══════╝</pre>
+        <dl class="facts" id="facts"></dl>
+      </div>
+    </section>
+
+    <!-- 左下: ターミナル -->
+    <section class="win win-term" aria-labelledby="term-title">
+      <div class="win-title" id="term-title">alacritty ~</div>
+      <div class="term" id="term"></div>
+    </section>
+
+    <!-- 右下: ファイルマネージャー -->
+    <section class="win win-files" aria-labelledby="files-title">
+      <div class="win-title" id="files-title">Files — ~/games</div>
+      <div class="files">
+        <ul class="sidebar">
+          <li>Home</li>
+          <li class="is-current">Games</li>
+          <li>Recent</li>
+          <li>Starred</li>
+          <li>Trash</li>
+        </ul>
+        <ul class="grid" id="folders"></ul>
+      </div>
     </section>
   </main>
+
+  <noscript>
+    <ul class="fallback">
+      <li><a href="lost001/">LOST CHRONICLES - 灰の底編</a></li>
+      <li><a href="lost002/">LOST CHRONICLES - 灰の町編</a></li>
+    </ul>
+  </noscript>
+
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
