@@ -1,4 +1,6 @@
-/* 配色は Omarchy の Solitude テーマ（colors.toml）に合わせている */
+/* 配色は Omarchy の Solitude テーマ（colors.toml）に合わせている。ダークモード固定。
+   サイトの色はすべてこの :root で決める。配色を変えるときはここの値と index.html の theme-color を書き換える。
+   /notes/（BaroqueEngine/notes の src/styles/solitude.css）も同じ配色なので、合わせて変える */
 :root {
   color-scheme: dark;
   --bg: #101315;
@@ -15,6 +17,27 @@
   --highlight: #d9dbdc;
   --warm: #c9c2b4;
   --alert: #de6145;
+  --folder-light: #b9c0c4;
+
+  /* 壁紙のグラデーション */
+  --wallpaper-top: #15191b;
+  --wallpaper-glow: #2a3134;
+  --wallpaper-glow-dim: #1b2023;
+
+  /* 壁紙が少し透ける上部バーとウィンドウの背景 */
+  --bar-bg: color-mix(in srgb, var(--bg-darker) 85%, transparent);
+  --win-bg: color-mix(in srgb, var(--bg) 94%, transparent);
+
+  /* ターミナルの 8 色（fastfetch 風のカラーパレットに並べる） */
+  --color0: #565d60;
+  --color1: #d9dbdc;
+  --color2: #9fa5a9;
+  --color3: #707070;
+  --color4: #798186;
+  --color5: #aeaeae;
+  --color6: #de6145;
+  --color7: #c9c2b4;
+
   --gap: 10px;
   --font: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
 }
@@ -36,9 +59,9 @@ body {
   /* 壁紙: くすんだ光と細かいノイズ */
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .8 0 0 0 0 .8 0 0 0 0 .8 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse at 78% 18%, #2a3134 0%, transparent 55%),
-    radial-gradient(ellipse at 12% 90%, #1b2023 0%, transparent 50%),
-    linear-gradient(160deg, #15191b, var(--bg-darker));
+    radial-gradient(ellipse at 78% 18%, var(--wallpaper-glow) 0%, transparent 55%),
+    radial-gradient(ellipse at 12% 90%, var(--wallpaper-glow-dim) 0%, transparent 50%),
+    linear-gradient(160deg, var(--wallpaper-top), var(--bg-darker));
   background-attachment: fixed;
   color: var(--fg);
   font-family: var(--font);
@@ -57,7 +80,7 @@ a {
   align-items: center;
   height: 30px;
   padding: 0 14px;
-  background: rgb(8 10 11 / 0.85);
+  background: var(--bar-bg);
   color: var(--fg-soft);
   font-size: 12px;
 }
@@ -96,7 +119,7 @@ a {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  background: rgb(16 19 21 / 0.94);
+  background: var(--win-bg);
   border: 1px solid var(--border);
   border-radius: 6px;
   overflow: hidden;
@@ -248,14 +271,14 @@ a {
   height: 12px;
 }
 
-.sw-0 { background: #565d60; }
-.sw-1 { background: #d9dbdc; }
-.sw-2 { background: #9fa5a9; }
-.sw-3 { background: #707070; }
-.sw-4 { background: #798186; }
-.sw-5 { background: #aeaeae; }
-.sw-6 { background: #de6145; }
-.sw-7 { background: #c9c2b4; }
+.sw-0 { background: var(--color0); }
+.sw-1 { background: var(--color1); }
+.sw-2 { background: var(--color2); }
+.sw-3 { background: var(--color3); }
+.sw-4 { background: var(--color4); }
+.sw-5 { background: var(--color5); }
+.sw-6 { background: var(--color6); }
+.sw-7 { background: var(--color7); }
 
 /* ターミナル */
 .term {
@@ -391,7 +414,7 @@ a {
   position: absolute;
   inset: 8px 0 0;
   border-radius: 3px 3px 6px 6px;
-  background: linear-gradient(180deg, #b9c0c4, var(--accent));
+  background: linear-gradient(180deg, var(--folder-light), var(--accent));
 }
 
 .folder-name {
