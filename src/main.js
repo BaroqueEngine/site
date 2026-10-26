@@ -29,22 +29,33 @@ const tick = () => {
 tick();
 setInterval(tick, 10_000);
 
-// エディタ: 行番号つきの README。ゲーム名の行はリンクにする
+// 技術メモ（BaroqueEngine/notes。/notes/ に置かれる）
+const notes = { href: "notes/", text: "notes 技術メモ" };
+
+// エディタ: 行番号つきの README。ゲーム名と技術メモの行はリンクにする
 const readme = document.getElementById("readme");
 const lines = [
   { cls: "md-h", text: "# BAROQUE ENGINE" },
   { text: "" },
-  { cls: "md-dim", text: "ブラウザで遊べる小さなゲームを置いています。" },
+  { cls: "md-dim", text: "ブラウザで遊べる小さなゲームと、技術メモを置いています。" },
   { text: "" },
   { cls: "md-h", text: "## Games" },
   { text: "" },
   ...games.map((game) => ({ game })),
   { text: "" },
+  { cls: "md-h", text: "## Notes" },
+  { text: "" },
+  { notes: true },
+  { text: "" },
   { cls: "md-dim", text: "<!-- release に push で追加 -->" },
 ];
 for (const line of lines) {
   const li = el("li");
-  if (line.game) {
+  if (line.notes) {
+    const a = el("a", "md-link", notes.text);
+    a.href = notes.href;
+    li.append(el("span", "md-dim", "- "), a, el("span", "md-dim", ` (${notes.href})`));
+  } else if (line.game) {
     li.append(el("span", "md-dim", "- "));
     li.append(gameLink(line.game, "md-link", `${line.game.title} ${line.game.subtitle}`));
     li.append(el("span", "md-dim", ` (${line.game.id}/)`));
@@ -61,10 +72,18 @@ const rows = [
   ["host", "baroqueengine.net"],
   ["games", String(games.length)],
   ["latest", games.at(-1).id],
+  ["notes", notes],
   ["theme", "solitude"],
 ];
 for (const [key, value] of rows) {
-  facts.append(el("dt", null, key), el("dd", null, value));
+  const dd = el("dd");
+  if (typeof value === "string") dd.textContent = value;
+  else {
+    const a = el("a", "md-link", value.href);
+    a.href = value.href;
+    dd.append(a);
+  }
+  facts.append(el("dt", null, key), dd);
 }
 const swatches = el("dd", "swatches");
 for (let i = 0; i < 8; i++) swatches.append(el("span", `sw sw-${i}`));
